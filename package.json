@@ -1,6 +1,6 @@
 {
   "name": "mp-project",
-  //"homepage": "https://Marketplace-Team-Challenge.github.io/Marketplace_FE/",
+  "homepage": "https://Ptz81.github.io/CarsRent/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,12 +13,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
     "@reduxjs/toolkit": "^1.9.5",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
-    "react-router-dom": "^6.14.1"
+    "react-redux": "^8.1.2",
+    "react-router-dom": "^6.14.1",
+    "react-toastify": "^9.1.3",
+    "redux": "^4.2.1",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",
