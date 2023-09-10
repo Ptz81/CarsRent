@@ -109,6 +109,32 @@ export const ButtonPrimary = styled(ButtonBase)`
   }
 `;
 
+export const ButtonSecondary = styled(ButtonBase)`
+  padding: 12px 100px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  border-radius: 12px;
+  background: ${colors.accentColor};
+  color: ${colors.mainBgColor};
+
+  @media screen and (min-width: ${bp.tablet}) {
+    padding: 18px 40px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  ${TransitionMain('color background-color')};
+
+  &:hover,
+  &:focus-visible {
+    color: ${colors.mainBgColor};
+    background-color: ${colors.hoverColor};
+  }
+`;
+
 export const Disabled = css`
   pointer-events: none;
   user-select: none;
