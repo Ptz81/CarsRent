@@ -1,6 +1,6 @@
 // import { useSelector, useDispatch } from "react-redux";
 import { Outlet } from "react-router-dom";
-// import Header from "../Header/Header";
+import Header from "../Header/Header";
 // import Footer from "../Footer/Footer";
 // import { useEffect } from "react";
 // import { getCurrentUserThunk } from "../../redux/thunks";
@@ -23,7 +23,7 @@ const SharedLayout = () => {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Outlet />
       {/* <Footer /> */}
     </>
