@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import NotFound from "../../components/NotFound/NotFound";
+import NotFound from "../components/NotFound/NotFound.jsx";
 
 const Page = styled.div`
   position: relative;

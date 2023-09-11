@@ -1,8 +1,9 @@
-import HeroSection from '../../components/Hero/Hero';
-import PopularCategories from '../../components/PopularCategories/PopularCategories';
+import HeroSection from '../components/Hero/Hero.jsx';
+import PopularCategories from '../components/PopularCategories/PopularCategories.jsx';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
-import { StyledLoadBtn } from '../components/LoadBtn/LoadBtn.jsx'
+// import { LoadBtn } from '../components/LoadBtn/LoadBtn.jsx';
+import LoadBtn from '../components/LoadBtn/LoadBtn'
 
 const Page = styled.div`
   position: relative;
@@ -43,9 +44,9 @@ const MainPage = () => {
           <PopularCategories categoryCar="Convertible" />
           <PopularCategories categoryCar="Sedan, Hatchback" />
           <ButtonWrapper>
-            <StyledLoadBtn  onClick={handleButtonClick}>
+            <LoadBtn  onClick={handleButtonClick}>
               Other cars
-            </StyledLoadBtn>
+            </LoadBtn>
           </ButtonWrapper>
         </Container>
       </Page>

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { ButtonPrimary, ButtonSecondary} from '../../styles/shared.jsx';
+import { ButtonPrimary, ButtonSecondary} from '../../styles/shared';
 
 export const ButtonMain = ({ type, buttonName, onClick, buttonStyle }) => {
   let ButtonComponent;

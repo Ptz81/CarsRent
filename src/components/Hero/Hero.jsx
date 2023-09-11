@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
-// import { StyledLogoutBtn } from "../LogoutBtn/LogoutBtn";
-// import { useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import {
   Section,
   BcgWrapper,
@@ -8,21 +7,21 @@ import {
   HeroTitle,
   HeroDescription,
 } from "./Hero.styled";
+import { ButtonMain } from "../../UI/Button/Button";
+
 
 const HeroSection = ({ title, description, children }) => {
-//   const navigate = useNavigate();
-//   const handleBtnClick = () => {
-//     navigate("/add");
-//   };
+  const navigate = useNavigate();
+  const handleBtnClick = () => {
+    navigate("/catalog");
+  };
   return (
     <Section>
       <BcgWrapper>
         <Container>
           {title && <HeroTitle>{title}</HeroTitle>}
           {description && <HeroDescription>{description}</HeroDescription>}
-          {/* <StyledLogoutBtn type="button" onClick={handleBtnClick}>
-            Add recipe
-          </StyledLogoutBtn> */}
+          <ButtonMain type="button" buttonStyle='active' buttonName="Select a car" onClick={handleBtnClick}/>
           {children}
         </Container>
       </BcgWrapper>

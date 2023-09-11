@@ -4,7 +4,8 @@ import { colors } from "../../styles/GlobalStyles.js";
 export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
-  padding: 20px 20px 19px 20px;
+  justify-content: space-between;
+  padding: 20px;
 
   background-color: ${colors.mainBgColor};
   border-bottom: 1px solid rgba(243, 243, 243, 0.2);

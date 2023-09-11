@@ -27,13 +27,13 @@ const MobileMenu = () => {
         <StyledMenuIcon
           onClick={handleMenuOpen}
           src={mobileMenu}
-          alt="mobile munu"
+          alt="mobile menu"
         />
       ) : (
         <StyledMenuIcon
           onClick={handleMenuClose}
           src={xCross}
-          alt="mobile munu close"
+          alt="mobile menu close"
         />
       )}
       {isShowMenu ? (

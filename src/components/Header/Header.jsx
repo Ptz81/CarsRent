@@ -9,7 +9,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1440) {
+      if (window.innerWidth < 768) {
         setIsMobileMenuVisible(true);
       } else {
         setIsMobileMenuVisible(false);

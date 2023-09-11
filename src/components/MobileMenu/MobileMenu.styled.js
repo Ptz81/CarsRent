@@ -1,15 +1,16 @@
 import styled from '@emotion/styled';
 import { colors } from '../../styles/GlobalStyles.js';
+import { TransitionMain } from '../../styles/shared.jsx';
 
 export const StyledMenuIcon = styled.img`
   margin-left: 14px;
   width: 32px;
   height: 32px;
   cursor: pointer;
-
+  transition: ${TransitionMain('scale')};
   &:hover,
   &:focus {
-    background-color: ${colors.hoverColor};
+    scale: calc(1.05);
   }
 
   /* tablet screen */

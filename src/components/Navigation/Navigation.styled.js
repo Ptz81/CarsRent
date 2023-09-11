@@ -12,7 +12,7 @@ export const StyledNav = styled.nav`
   z-index: 999;
 
   /* desktop screen */
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
     margin: 0;
   }

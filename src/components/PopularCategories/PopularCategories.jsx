@@ -1,11 +1,20 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import { setToken, instance } from '../../api/auth';
 // import { useSelector } from 'react-redux';
 // import { selectCurrentUser } from '../../redux/selectors';
-import css from './PopularCategories.module.scss';
 import carsData from '../../data/DB/advertsCars.json';
 import PropTypes from 'prop-types';
+import {
+  NameCategory,
+  CarList,
+  ImgContainer,
+  ImgCar,
+  NameAndIngridients,
+  NameCocktail,
+  Ingredients,
+} from './PopularCategories.styled.js';
+
 const PopularCategories = ({ categoryCar }) => {
   const [carsInCategory, setCarsInCategory] = useState([]);
     const [cardsPerRow, setCardsPerRow] = useState(4);
@@ -56,27 +65,21 @@ const randomCar = carsOfType[index];
 
   return (
     <div>
-      <h2 className={css.nameCategory}>{categoryCar}</h2>
-      <ul className={css.carList}>
-        {carsInCategory.slice(0, cardsPerRow).map(car=> (
+       <NameCategory>{categoryCar}</NameCategory>
+      <CarList>
+        {carsInCategory.slice(0, cardsPerRow).map((car) => (
           <li key={car.make}>
-            <div className={css.imgContainer}>
-              <img
-                src={car.img}
-                alt={car.model}
-                className={css.imgCar}
-              />
-            </div>
+            <ImgContainer>
+              <ImgCar src={car.img} alt={car.model} />
+            </ImgContainer>
 
-            <div className={css.nameAndIngridients}>
-              <p className={css.nameCocktail}>{car.make}</p>
-              <Link className={css.ingredients} to={`/car/${car.id}`}>
-                See more
-              </Link>
-            </div>
+            <NameAndIngridients>
+              <NameCocktail>{car.make}</NameCocktail>
+              <Ingredients to={`/car/${car.id}`}>See more</Ingredients>
+            </NameAndIngridients>
           </li>
         ))}
-      </ul>
+      </CarList>
     </div>
   );
 };
