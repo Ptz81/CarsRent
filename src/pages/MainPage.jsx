@@ -2,8 +2,8 @@ import HeroSection from '../components/Hero/Hero.jsx';
 import PopularCategories from '../components/PopularCategories/PopularCategories.jsx';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
-// import { LoadBtn } from '../components/LoadBtn/LoadBtn.jsx';
-import LoadBtn from '../components/LoadBtn/LoadBtn'
+// import LoadBtn from '../components/LoadBtn/LoadBtn.jsx'
+import { ButtonMain } from '../UI/Button/Button.jsx';
 
 const Page = styled.div`
   position: relative;
@@ -12,18 +12,15 @@ const Page = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
-  text-align: center;
+display: flex;
+justify-content: center;
   margin-top: 80px;
 `;
 
 export const Container = styled.div`
-  max-width: 1240px;
-  padding: 80px 0 40px 20px;
+  padding: 40px 20px 40px 20px;
   @media screen and (min-width: 768px) {
-    padding: 140px 0 60px 32px;
-  }
-  @media screen and (min-width: 1440px) {
-    padding: 158px 0 62px 110px;
+    padding: 80px 50px 40px 50px;
   }
 `;
 
@@ -42,11 +39,9 @@ const MainPage = () => {
         <Container>
           {' '}
           <PopularCategories categoryCar="Convertible" />
-          <PopularCategories categoryCar="Sedan, Hatchback" />
+          <PopularCategories categoryCar="SUV" />
           <ButtonWrapper>
-            <LoadBtn  onClick={handleButtonClick}>
-              Other cars
-            </LoadBtn>
+            <ButtonMain type="button" buttonStyle='secondary' buttonName="Load more" onClick={handleButtonClick}/>
           </ButtonWrapper>
         </Container>
       </Page>

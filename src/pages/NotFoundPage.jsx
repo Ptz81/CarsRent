@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
 import NotFound from "../components/NotFound/NotFound.jsx";
+import { colors } from "../styles/GlobalStyles.js";
 
 const Page = styled.div`
   position: relative;
-  background: #0a0a11;
+  background: ${colors.subTitleColor};
   margin: 0 auto;
 `;
 

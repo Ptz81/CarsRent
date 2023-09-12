@@ -1,31 +1,61 @@
-import { useState } from 'react';
-import { StyledLogoutBtn } from './LoadBtn.styled.js';
+// import { useState } from 'react';
+// import { StyledLoadBtn } from './LoadBtn.styled.js';
 // import LoadModal from '../LoadModal/LoadModal.jsx';
 
-const LoadBtn = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+// const LoadBtn = () => {
+//   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
+//   const handleOpenModal = () => {
+//     setIsModalOpen(true);
 
-    document.body.classList.add('no-scroll');
-  };
+//     document.body.classList.add('no-scroll');
+//   };
 
-  return (
-    <>
-      <StyledLogoutBtn type="button" onClick={handleOpenModal}>
-        Log out
-      </StyledLogoutBtn>
-      {/* {isModalOpen && (
-        <LoadModal
-          closeModal={() => {
-            setIsModalOpen(false);
-            document.body.classList.remove('no-scroll');
-          }}
-        />
-      )} */}
-    </>
-  );
-};
+//   return (
+//     <>
+//       <StyledLoadBtn type="button" onClick={handleOpenModal}>
+//         Load more
+//       </StyledLoadBtn>
+//       {isModalOpen && (
+//         <LoadModal
+//           closeModal={() => {
+//             setIsModalOpen(false);
+//             document.body.classList.remove('no-scroll');
+//           }}
+//         />
+//       )}
+//     </>
+//   );
+// };
 
-export default LoadBtn;
+// export default LoadBtn;
+// import { useState } from 'react';
+// import { StyledLoadBtn } from './LoadBtn.styled.js';
+// import LoadModal from '../LoadModal/LoadModal.jsx';
+
+// const LoadBtn = () => {
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+
+//   const handleOpenModal = () => {
+//     setIsModalOpen(true);
+//     document.body.classList.add('no-scroll');
+//   };
+
+//   return (
+//     <>
+//       <StyledLoadBtn type="button" onClick={handleOpenModal}>
+//         Load more
+//       </StyledLoadBtn>
+//       {isModalOpen && (
+//         <LoadModal
+//           closeModal={() => {
+//             setIsModalOpen(false);
+//             document.body.classList.remove('no-scroll');
+//           }}
+//         />
+//       )}
+//     </>
+//   );
+// };
+
+// export default LoadBtn;

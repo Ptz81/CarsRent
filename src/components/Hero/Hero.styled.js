@@ -3,16 +3,10 @@ import { colors } from "../../styles/GlobalStyles.js";
 import bcgDesktop from "../../assets/MainPage.jpg";
 
 export const Section = styled.section`
+position: relative;
   background-color: ${colors.mainBgColor};
   min-height: 100%;
-  padding-left: 20px;
-
-  @media (min-width: 768px) {
-    padding-left: 32px;
-  }
-  @media (min-width: 1180px) {
-    padding-left: 100px;
-  }
+  width: 100%;
 `;
 export const Container = styled.div`
   display: flex-inline;
@@ -23,15 +17,16 @@ export const Container = styled.div`
   @media (min-width: 768px) {
     padding-top: 180px;
   }
-  @media (min-width: 1180px) {
+  @media (min-width: 1200px) {
     padding-top: 160px;
   }
 `;
 export const BcgWrapper = styled.div`
+padding-left: 20px;
   height: 740px;
-  background-size: 640px 790px;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: top 106 left 250;
+  background-position: top 0 right 0px;;
   background-image: linear-gradient(
       0.95deg,
       #0a0a11 -0.56%,
@@ -42,9 +37,9 @@ export const BcgWrapper = styled.div`
 
   @media screen and (min-width: 480px) {
     height: 790px;
-    background-size: 680px 790px;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: top 0 left 120px;
+    background-position: top 0 right 0px;
     background-image: linear-gradient(
         0.95deg,
         #0a0a11 -0.56%,
@@ -55,10 +50,11 @@ export const BcgWrapper = styled.div`
   }
   @media screen and (min-width: 768px) {
     height: 790px;
+    padding-left: 50px;
     margin: 0 auto;
-    background-size: 680px 790px;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: top 0 left 320px;
+    background-position: top 0 right 0px;
     background-image: linear-gradient(
         0.95deg,
         #0a0a11 -0.56%,
@@ -67,10 +63,10 @@ export const BcgWrapper = styled.div`
       linear-gradient(86.16deg, #0a0a11 8.41%, rgba(10, 10, 17, 0) 46.6%),
       url("${bcgDesktop}");
   }
-  @media screen and (min-width: 1180px) {
+  @media screen and (min-width: 1200px) {
     height: 790px;
     margin: 0 auto;
-    background-size: 700px 790px;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top 0 right 0px;
     background-image: linear-gradient(
@@ -84,7 +80,7 @@ export const BcgWrapper = styled.div`
 `;
 export const HeroTitle = styled.h1`
   max-width: 280px;
-  color: ${colors.textMainColor};
+  color: ${colors.mainBgColor};
   font-size: 32px;
   font-style: normal;
   font-weight: 600;
@@ -105,7 +101,7 @@ export const HeroTitle = styled.h1`
 `;
 export const HeroDescription = styled.p`
   max-width: 270px;
-  color: ${colors.textMainColor};
+  color: ${colors.mainBgColor};
   font-size: 14px;
   font-style: normal;
   font-weight: 400;

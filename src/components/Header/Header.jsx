@@ -30,13 +30,11 @@ const Header = () => {
       <Logo />
       {isMobileMenuVisible ? (
         <>
-          {/* <UserLogo /> */}
           <MobileMenu />
         </>
       ) : (
         <>
           <Navigation />
-          {/* <UserLogo /> */}
         </>
       )}
     </StyledHeader>

@@ -1,8 +1,4 @@
 import { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-// import { setToken, instance } from '../../api/auth';
-// import { useSelector } from 'react-redux';
-// import { selectCurrentUser } from '../../redux/selectors';
 import carsData from '../../data/DB/advertsCars.json';
 import PropTypes from 'prop-types';
 import {
@@ -10,44 +6,24 @@ import {
   CarList,
   ImgContainer,
   ImgCar,
-  NameAndIngridients,
-  NameCocktail,
-  Ingredients,
+  NameAndType,
+  NameCar,
+  Cars,
 } from './PopularCategories.styled.js';
 
 const PopularCategories = ({ categoryCar }) => {
+  const [cardsPerRow, setCardsPerRow] = useState(4);
   const [carsInCategory, setCarsInCategory] = useState([]);
-    const [cardsPerRow, setCardsPerRow] = useState(4);
     
-    useEffect(() => {
-    const carsOfType = carsData.filter((car) =>
-    car.type.toLowerCase() === categoryCar.toLowerCase()
-    );
-    const index = Math.floor(Math.random() * carsOfType.length);
-const randomCar = carsOfType[index];
-    setCarsInCategory([randomCar]);
-  }, [categoryCar]);
-//   const token = useSelector(state => state.auth.token);
-//   useEffect(() => {
-//     setToken(token);
-//     instance
-//       .get('api/car/main-page', {
-//         params: { category: categoryCar.toLowerCase() },
-//       })
-//       .then(res => {
-//         const data = res.data;
-//         setCarsInCategory(data[0].hits);
-//       })
-//       .catch(error => {
-//         console.error('Error fetching cars:', error);
-//       });
-//   }, [categoryCar]);
-
   useEffect(() => {
+    const carsOfType = carsData.filter((car) =>
+      car.type.toLowerCase() === categoryCar.toLowerCase()
+    );
+
     const updateCardsPerRow = () => {
       if (window.innerWidth > 768) {
         setCardsPerRow(4);
-      } else if (window.innerWidth > 375) {
+      } else if (window.innerWidth > 478) {
         setCardsPerRow(2);
       } else {
         setCardsPerRow(1);
@@ -56,27 +32,29 @@ const randomCar = carsOfType[index];
 
     updateCardsPerRow();
 
+    setCarsInCategory(carsOfType);
+
     window.addEventListener('resize', updateCardsPerRow);
 
     return () => {
       window.removeEventListener('resize', updateCardsPerRow);
     };
-  }, []);
+  }, [categoryCar]);
 
   return (
     <div>
        <NameCategory>{categoryCar}</NameCategory>
       <CarList>
         {carsInCategory.slice(0, cardsPerRow).map((car) => (
-          <li key={car.make}>
+          <li key={car.id}>
             <ImgContainer>
-              <ImgCar src={car.img} alt={car.model} />
+              <ImgCar src={car.img} alt={car.make} />
             </ImgContainer>
 
-            <NameAndIngridients>
-              <NameCocktail>{car.make}</NameCocktail>
-              <Ingredients to={`/car/${car.id}`}>See more</Ingredients>
-            </NameAndIngridients>
+            <NameAndType>
+              <NameCar>{car.make}</NameCar>
+              <Cars to={`/car/${car.id}`}>See more</Cars>
+            </NameAndType>
           </li>
         ))}
       </CarList>

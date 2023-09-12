@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { colors } from "../../styles/GlobalStyles";
 
 export const Wrapper = styled.div`
     position: relative;
@@ -6,7 +7,6 @@ export const Wrapper = styled.div`
     display: flex;
     margin: 0 auto;
     justify-content: center;
-
 `;
 export const WrapperForFour = styled.div`
 display: flex;
@@ -17,11 +17,10 @@ position: relative;
 export const SpanStart = styled.span`
 position: absolute;
 top: 25%;
-/* left: 39%; */
-left: 55px;
-    color: rgba(243, 243, 243, 0.10);
+left: -100px;
+color: ${colors.mainBgColor};
 font-family: Manrope;
-font-size: 150px;
+font-size: 200px;
 font-style: normal;
 font-weight: 600;
 line-height: 0.82; /* 82% */
@@ -29,11 +28,10 @@ line-height: 0.82; /* 82% */
 export const SpanEnd = styled.span`
 position: absolute;
 top: 25%;
-/* right: 39%; */
-right: 55px;
-    color: rgba(243, 243, 243, 0.10);
+color: ${colors.mainBgColor};
+right: -100px;
 font-family: Manrope;
-font-size: 150px;
+font-size: 200px;
 font-style: normal;
 font-weight: 600;
 line-height: 0.82; /* 82% */

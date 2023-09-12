@@ -11,7 +11,6 @@ export const StyledNav = styled.nav`
   margin: auto;
   z-index: 999;
 
-  /* desktop screen */
   @media screen and (min-width: 768px) {
     flex-direction: row;
     margin: 0;
@@ -28,15 +27,16 @@ export const StyledNavLink = styled(NavLink)`
 
   color: ${colors.textMainColor};
   border: 1px solid rgba(243, 243, 243, 0.2);
-  border-radius: 20px;
+  border-radius: 12px;
   transition: ${TransitionMain('background-color')};
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: ${colors.hoverColor};
+    color: ${colors.mainBgColor};
   }
 
   &:active {
     background-color: ${colors.hoverColor};
+    color: ${colors.mainBgColor};
   }
 `;
