@@ -13,9 +13,9 @@ export const Section = styled.section`
     padding: 20px 32px;
     flex-direction: row;
   }
-  @media (min-width: 1200px) {
+  /* @media (min-width: 1200px) {
     padding: 20px 100px;
-  }
+  } */
 `;
 
 export const Container = styled.div`
@@ -39,10 +39,6 @@ export const LogoWrapper = styled.div`
   @media (min-width: 768px) {
     row-gap: 28px;
     margin: 0;
-  }
-
-  @media (min-width: 1200px) {
-    row-gap: 40px;
   }
 `;
 
@@ -76,5 +72,8 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 16px;
   letter-spacing: -0.24px;
-  margin-top: 80px;
+  
+  @media (min-width: 768px) {
+    margin-top: 80px;
+  }
 `;

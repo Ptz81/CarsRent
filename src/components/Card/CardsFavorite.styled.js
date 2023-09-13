@@ -2,118 +2,123 @@ import styled from "@emotion/styled";
 import { colors } from "../../styles/GlobalStyles";
 
 export const Wrapper = styled.div`
-  flex-basis: 335px;
+width: 274px;
+  /* flex-basis: 274px; */
   display: flex;
   flex-direction: column;
-  
-  @media screen and (max-width: 767px) {
-    &:not(:last-child) {
-      margin-bottom: 40px;
-    }
-  }
+  margin-bottom: 40px;
+  margin: 20px;
 
   @media screen and (min-width: 768px) {
     flex-basis: calc((100% - 20px) / 2);
-    flex-basis: 342px;
+    /* flex-basis: 342px; */
   }
 
   @media screen and (min-width: 1440px) {
     flex-basis: calc((100% - 40px) / 3);
-    flex-basis: 400px;
+    /* flex-basis: 400px; */
   }
 `;
 export const Text = styled.p`
-  color: #f3f3f3;
+  color: ${colors.subTitleColor};
   font-family: inherit;
-  font-size: 14px;
+  font-size: 10px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 16px;
+  margin-right: 12px;
   @media screen and (min-width: 768px) {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 12px;
+    line-height: 18px;
   }
+`
 
-  max-height: 72px;
-  @media screen and (min-width: 768px) {
-    max-height: 88px;
-  }
-
-  -webkit-box-orient: vertical;
-  display: block;
-  display: -webkit-box;
-  overflow: hidden !important;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 4;
-`;
-
-export const TextBox = styled.div`
-  overflow: hidden;
-
-  height: 75px;
-  margin: 18px 0;
-
-  @media screen and (min-width: 768px) {
-    height: 96px;
-    margin: 24px 0;
-  }
-`;
 export const Img = styled.img`
   background-position: center top;
-  background-size: cover;
-  height: 360px;
-  border-radius: 8px;
-
-  @media screen and (min-width: 1440px) {
-    height: 400px;
-  }
+  object-fit: cover;
+  width: 274px;
+  height: 268px;
+  border-radius: 14px;
 `;
 
 export const Info = styled.div`
-  margin-top: 24px;
+  margin-top: 14px;
+  margin-bottom: 8px;
+display: flex;
+justify-content: space-between;
+`;
+export const CardWrapper = styled.div`
+position: relative;
+width: 274px;
+`
+export const Favorite = styled.img`
+  position: absolute;
+  cursor: pointer;
+  top: 14px;
+  right: 14px;
+  &:hover,
+  &:focus {
+    stroke: ${colors.hoverColor};
+    fill:${colors.hoverColor};
+  }
 `;
 
-export const Description = styled.p`
-  color: rgba(243, 243, 243, 0.5);
-  font-family: inherit;
+
+export const Description = styled.div`
+  color: ${colors.textMainColor};
+  display: flex;
+  margin-bottom: 4px;
+  /* font-family: inherit;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 18px; */
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
   }
 `;
-export const Title = styled.h2`
-  color: #f3f3f3;
+export const Title = styled.div`
+  color: ${colors.textMainColor};
   font-family: inherit;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
+  /* margin-bottom: 8px; */
+`;
+export const Price = styled.div`
+  color: ${colors.textMainColor};
+  font-family: inherit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin-left: 140px;
 
-  @media screen and (min-width: 768px) {
+  /* @media screen and (min-width: 768px) {
     font-size: 24px;
     line-height: 32px;
-  }
+  } */
 
-  margin-bottom: 4px;
+  /* margin-bottom: 8px; */
 `;
-export const ListBtn = styled.ul`
-  display: flex;
-  gap: 8px;
+export const ListBtn = styled.div`
+  width: auto;
+ margin-top: 24px;
 `;
 export const ButtonSee = styled.p`
-  padding: 14px 40px;
-  border-radius: 42px;
+  padding: 12px 40px;
+  border-radius: 12px;
   background: ${colors.accentColor};
-  color: #f3f3f3;
+  color: ${colors.mainBgColor};
   font-family: inherit;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 18px;
+  text-align: center;
+ 
 
   @media screen and (min-width: 768px) {
     padding: 18px 44px;

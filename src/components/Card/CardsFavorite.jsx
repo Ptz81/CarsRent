@@ -1,38 +1,69 @@
 import { Link } from "react-router-dom";
-import TrashIcon from "../../assets/trash.svg";
 import PropTypes from "prop-types";
+import { FaHeart } from "react-icons/fa"; 
+import styled from "@emotion/styled";
+
 import {
   Wrapper,
   Img,
   Info,
   Title,
   Description,
-  TextBox,
+  // TextBox,
   Text,
   ListBtn,
   ButtonSee,
-  ButtonTrash,
+  CardWrapper,
+  Price,
+  
 } from "./CardsFavorite.styled.js";
+import { colors } from "../../styles/GlobalStyles";
 
-const CardsFavorite = ({id, make, description, CarThumb="../../assets/favorite.png", onDelete }) => {
- 
+const HeartIcon = styled(FaHeart)`
+  cursor: pointer;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  fill: transparent;
+  stroke: white;
+  stroke-width: 30px; 
+  &:hover,
+  &:focus{
+    fill:${colors.hoverColor};
+    stroke-opacity: 0.2;
+  }
+`;
+
+const CardsFavorite = ({id, make, description, CarThumb="/volvo red.jpg", onDelete }) => {
+
   return (
     <Wrapper>
-      <Img src={CarThumb} /> 
+      <CardWrapper>
+        <Img src={CarThumb}/>
+        <HeartIcon size={32} onClick={() => onDelete(id)} />
+      </CardWrapper>
       <Info>
-        <Title>{make}</Title>
-        <Description>Description</Description>
-        <TextBox>
-          <Text>{description}</Text>
-        </TextBox>
-      </Info>
+        {/* <Title>{make}</Title> */}
+        <Title>Volvo, 2006</Title>
+        <Price>55$</Price>
+        </Info>
+        <Description>
+          <Text>Kharkiv</Text>
+          <Text>Ukraine</Text>
+          <Text>Adventure Car Rentals</Text>
+      </Description>
+              <Description>
+          <Text>Suv</Text>
+          <Text>JXV 150</Text>
+        <Text>9587</Text>
+        <Text>Premium sound system</Text>
+        </Description>
+          {/* <Text>{description}</Text> */}
+      
       <ListBtn>
         <Link style={{ textDecoration: "none" }} to={`/catalog/${id}`}>
-          <ButtonSee>See car</ButtonSee>
+          <ButtonSee>Learn more</ButtonSee>
         </Link>
-        <ButtonTrash onClick={() => onDelete(id)}>
-          <img src={TrashIcon} alt="trash icon" />
-        </ButtonTrash>
       </ListBtn>
     </Wrapper>
   );
