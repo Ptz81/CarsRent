@@ -5,6 +5,7 @@ import { css } from '@emotion/react';
 export const colors = {
   grayColor: '#8A8A89',
   subTitleColor: 'rgba(18, 20, 23, 0.5)',
+  selectColor:'rgba(18, 20, 23, 0.2)',
   textMainColor: '#121417',
   accentColor: '#3470FF',
   hoverColor: '#0B44CD',

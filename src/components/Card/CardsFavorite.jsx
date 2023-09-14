@@ -86,7 +86,7 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
 export default CardsFavorite;
 
 CardsFavorite.propTypes = {
-  id: PropTypes.string, 
+  id: PropTypes.number, 
   make: PropTypes.string,
   year: PropTypes.number,
   address: PropTypes.string,

@@ -44,7 +44,7 @@ const CardList = ({ items, onDel }) => {
   const elements = items
     .slice(firstContentIndex, lastContentIndex)
     .map(item => (
-      <Card key={item._id} {...item} onDelete={deleteCar} />
+      <Card key={item.id} {...item} onDelete={deleteCar} />
     ));
 
   return (

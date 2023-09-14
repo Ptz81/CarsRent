@@ -80,7 +80,7 @@ const NavMenu = ({
 
   return (
     <FilterContainer>
-      <Filter filter={filter} onFilterChange={handleFilterChange} />
+      
       <CustomSelectComponent
         options={["Select model", ...models]}
         value={make} 
@@ -93,6 +93,11 @@ const NavMenu = ({
         onChange={handlePriceChange}
         placeholder="To $"
       />
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Filter filter={filter} inputStyle='active' onFilterChange={handleFilterChange} inputPrefix="From" />
+      <Filter filter={filter} inputStyle='secondary' onFilterChange={handleFilterChange} inputPrefix="To"/>
+      </div>
+      
     </FilterContainer>
   );
 };
@@ -100,8 +105,8 @@ const NavMenu = ({
 export default NavMenu;
 
 NavMenu.propTypes = {
-  make: PropTypes.string.isRequired,
-  rentalPrice: PropTypes.string.isRequired,
+  make: PropTypes.string,
+  rentalPrice: PropTypes.string,
   onCategoryChange: PropTypes.func.isRequired,
   onIngredientChange: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,

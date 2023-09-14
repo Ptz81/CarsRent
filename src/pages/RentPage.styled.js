@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { colors } from "../styles/GlobalStyles";
 // import downArrow from './down-arrow-svgrepo-com.svg';
 // import loop from './loop-svgrepo-com.svg'
 
@@ -8,7 +9,8 @@ export const InputWrapper = styled.div`
 `
 export const Page = styled.div`
   position: relative;
-  background: #0a0a11;
+  background: ${colors.mainBgColor};
+  color: ${colors.textMainColor};
   margin: 0 auto;
 `;
 export const Container = styled.div`

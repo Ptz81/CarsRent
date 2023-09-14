@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
+import { colors } from "../../styles/GlobalStyles";
 
 const CustomSelect = styled.div`
   position: relative;
@@ -10,18 +11,18 @@ const CustomSelect = styled.div`
 const SelectButton = styled.button`
   width: 335px;
   padding: 18px 24px;
-  border-radius: 200px;
+  border-radius: 14px;
   font-size: 14px;
-  background: #161f37;
-  color: #f3f3f3;
+  background: ${colors.disabled};
+  color: ${colors.textMainColor};
   outline: none;
   text-align: left;
   border: 1px solid rgba(243, 243, 243, 0.2);
   cursor: pointer;
   margin-bottom: 4px;
   @media only screen and (min-width: 768px) {
-    width: 200px;
-    padding: 18px 24px;
+    width: auto;
+    padding: 14px 18px;
     font-size: 17px;
     margin-bottom: 0;
   }
@@ -32,24 +33,28 @@ const OptionsWrapper = styled.div`
   top: calc(100% + 4px);
   left: 0;
   right: 0;
-  background: #161f37;
-  color: #f3f3f3;
-  font-size: 17px;
-  border: 1px solid rgba(243, 243, 243, 0.2);
-  border-radius: 20px;
+  background: ${colors.mainBgColor};
+  color: ${colors.selectColor};
+  -webkit-box-shadow: 0px 4px 36px 0px rgba(247,247,251,0.8);
+-moz-box-shadow: 0px 4px 36px 0px rgba(247,247,251,0.8);
+box-shadow: 0px 4px 36px 0px rgba(247,247,251,0.8);
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid ${colors.mainBgColor};
+  border-radius: 14px;
   max-height: 200px;
   overflow-y: auto;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-  padding-right: 8px;
+  padding: 14px 68px 14px 18px;
   z-index: 100;
   scrollbar-width: 8px;
-  scrollbar-color: #434d67 transparent;
+  scrollbar-color: ${colors.disabled} transparent;
   ::-webkit-scrollbar {
     width: 8px;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #434d67;
-    border-radius: 20px;
+    background-color: ${colors.disabled};
+    border-radius: 10px;
     width: 8px;
   }
   ::-webkit-scrollbar-corner {
@@ -62,12 +67,12 @@ const Option = styled.div`
   padding: 10px 20px;
   cursor: pointer;
   &:hover {
-    background: #0a0a11;
+    background: ${colors.disabled};
   }
 `;
 
 const Placeholder = styled.div`
-  color: #f3f3f3;
+  color: ${colors.textMainColor};
   font-size: 17px;
 `;
 
@@ -110,9 +115,9 @@ const CustomSelectComponent = ({ options, value, onChange, placeholder }) => {
 };
 
 CustomSelectComponent.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string).isRequired,
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string),
+  value: PropTypes.string,
+  onChange: PropTypes.func,
   placeholder: PropTypes.string,
 };
 
