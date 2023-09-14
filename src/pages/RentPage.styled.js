@@ -5,7 +5,7 @@ import { colors } from "../styles/GlobalStyles";
 
 export const InputWrapper = styled.div`
     display: flex;
-    max-width: 335px;
+    max-width: 226px;
 `
 export const Page = styled.div`
   position: relative;
@@ -14,20 +14,20 @@ export const Page = styled.div`
   margin: 0 auto;
 `;
 export const Container = styled.div`
-  padding: 80px 20px 40px 20px;
+  /* padding: 80px 20px 40px 20px; */
   @media screen and (min-width: 768px) {
-    padding: 140px 32px 60px 32px;
+    /* padding: 140px 32px 60px 32px; */
   }
   @media screen and (min-width: 1200px) {
-    padding: 158px 110px 62px 110px;
+    padding: 150px 128px 100px 128px;
   }
 `;
 export const FilterContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 29px;
 
-  margin-top: 40px;
+  /* margin-top: 40px; */
   margin-bottom: 40px;
 
   @media only screen and (min-width: 768px) {

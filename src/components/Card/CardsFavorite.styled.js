@@ -2,21 +2,22 @@ import styled from "@emotion/styled";
 import { colors } from "../../styles/GlobalStyles";
 
 export const Wrapper = styled.div`
-width: 274px;
-  /* flex-basis: 274px; */
+/* width: 274px; */
+  flex-basis: 274px;
   display: flex;
   flex-direction: column;
+
   margin-bottom: 40px;
-  margin: 20px;
+  /* margin: 20px; */
 
   @media screen and (min-width: 768px) {
-    flex-basis: calc((100% - 20px) / 2);
-    /* flex-basis: 342px; */
+    flex-basis: calc((100% - 20px) / 4);
+    flex-basis: 342px;
   }
 
-  @media screen and (min-width: 1440px) {
-    flex-basis: calc((100% - 40px) / 3);
-    /* flex-basis: 400px; */
+  @media screen and (min-width: 1200px) {
+    /* flex-basis: calc((100% - 40px) / 7); */
+    flex-basis: 274px;
   }
 `;
 
@@ -97,7 +98,7 @@ export const Price = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
-  margin-left: 140px;
+  /* margin-left: 140px; */
 
   /* @media screen and (min-width: 768px) {
     font-size: 24px;
