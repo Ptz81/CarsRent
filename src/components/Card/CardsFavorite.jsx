@@ -2,22 +2,23 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { FaHeart } from "react-icons/fa"; 
 import styled from "@emotion/styled";
-
+import GreyPlugL from '../../assets/greyPlug/greyPlugL.svg';
 import {
   Wrapper,
   Img,
   Info,
   Title,
   Description,
-  // TextBox,
   Text,
   ListBtn,
   ButtonSee,
   CardWrapper,
   Price,
+  Box,
   
 } from "./CardsFavorite.styled.js";
 import { colors } from "../../styles/GlobalStyles";
+
 
 const HeartIcon = styled(FaHeart)`
   cursor: pointer;
@@ -34,31 +35,44 @@ const HeartIcon = styled(FaHeart)`
   }
 `;
 
-const CardsFavorite = ({id, make, description, CarThumb="/volvo red.jpg", onDelete }) => {
-
+const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, accessories, rentalPrice, img, onDelete }) => {
+  const propsImg = Object.values({ img })[0];
+  
+  const addressText = address || "";
+  const addressParts = addressText.split(', ');
+  const city = addressParts[addressParts.length - 2];
+  const accessoriesText = accessories || "";
+  const advantages = accessoriesText[0];
+  
   return (
     <Wrapper>
       <CardWrapper>
-        <Img src={CarThumb}/>
+          {!propsImg || propsImg === '' ? (
+        <Box>
+          <GreyPlugL />
+        </Box>
+      ) : (
+        <Img src={img}/>
+      )}
+        
         <HeartIcon size={32} onClick={() => onDelete(id)} />
       </CardWrapper>
       <Info>
         {/* <Title>{make}</Title> */}
-        <Title>Volvo, 2006</Title>
-        <Price>55$</Price>
+        <Title>{make}, {year}</Title>
+        <Price>{ rentalPrice}</Price>
         </Info>
         <Description>
-          <Text>Kharkiv</Text>
+          <Text>{ city }</Text>
           <Text>Ukraine</Text>
-          <Text>Adventure Car Rentals</Text>
+        <Text>{ rentalCompany }</Text>
       </Description>
               <Description>
-          <Text>Suv</Text>
-          <Text>JXV 150</Text>
-        <Text>9587</Text>
-        <Text>Premium sound system</Text>
+        <Text>{ type}</Text>
+        <Text>{ model }</Text>
+        <Text>{ id }</Text>
+        <Text>{ advantages }</Text>
         </Description>
-          {/* <Text>{description}</Text> */}
       
       <ListBtn>
         <Link style={{ textDecoration: "none" }} to={`/catalog/${id}`}>
@@ -73,8 +87,15 @@ export default CardsFavorite;
 
 CardsFavorite.propTypes = {
   id: PropTypes.string, 
-  make: PropTypes.string, 
-  description: PropTypes.string, 
+  make: PropTypes.string,
+  year: PropTypes.number,
+  address: PropTypes.string,
+  accessories: PropTypes.array,
+  rentalCompany: PropTypes.string,
+  model: PropTypes.string,
+  img: PropTypes.string,
+  type: PropTypes.string, 
+  rentalPrice: PropTypes.string,
   CarThumb: PropTypes.string, 
   onDelete: PropTypes.func, 
 };

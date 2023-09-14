@@ -1,0 +1,20 @@
+import styled from '@emotion/styled';
+export const FilterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 60px;
+
+  }
+  @media only screen and (min-width: 768px) {
+    margin-top: 80px;
+
+  }
+`;

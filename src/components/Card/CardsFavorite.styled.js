@@ -19,6 +19,9 @@ width: 274px;
     /* flex-basis: 400px; */
   }
 `;
+
+
+
 export const Text = styled.p`
   color: ${colors.subTitleColor};
   font-family: inherit;

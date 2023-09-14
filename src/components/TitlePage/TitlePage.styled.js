@@ -1,5 +1,5 @@
 import { colors } from '../../styles/GlobalStyles';
-import { breakpoint as bp } from '../../styles/shared';
+// import { breakpoint as bp } from '../../styles/shared';
 import styled from '@emotion/styled';
 
 export const Title = styled.h1`
@@ -11,10 +11,10 @@ export const Title = styled.h1`
   color: ${colors.textMainColor};
 
 
-  @media screen and (min-width: ${bp.tablet}) {
+  @media screen and (min-width: 768px) {
     font-size: 56px;
   }
-  @media screen and (min-width: ${bp.desktop}) {
+  @media screen and (min-width: 1200px) {
     font-size: 64px;
   }
 `;
