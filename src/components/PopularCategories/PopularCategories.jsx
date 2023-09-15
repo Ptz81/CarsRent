@@ -21,9 +21,11 @@ const PopularCategories = ({ categoryCar }) => {
     );
 
     const updateCardsPerRow = () => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1200) {
         setCardsPerRow(4);
-      } else if (window.innerWidth > 478) {
+      }else if (window.innerWidth > 1000) {
+        setCardsPerRow(3);
+      } else if (window.innerWidth > 768) {
         setCardsPerRow(2);
       } else {
         setCardsPerRow(1);

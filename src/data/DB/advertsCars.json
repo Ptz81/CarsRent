@@ -571,32 +571,7 @@
         "rentalConditions": "Minimum age: 21\nValid driver's license\nSecurity deposit and insurance required",
         "mileage": 4618
     },
-    {
-        "id": 9586,
-        "year": 2020,
-        "make": "Volvo",
-        "model": "XC60",
-        "type": "SUV",
-        "photoLink": "https://res.cloudinary.com/ditdqzoio/image/upload/v1687252635/cars/volvo_xc60_2.jpg",
-        "description": "The Volvo XC60 is a luxurious and versatile SUV that combines Scandinavian design, advanced safety features, and a comfortable driving experience, making it an ideal choice for families and adventure enthusiasts.",
-        "fuelConsumption": "8.5",
-        "engineSize": "2.0L 4-cylinder",
-        "accessories": [
-            "Leather upholstery",
-            "Panoramic sunroof",
-            "Harman Kardon premium sound system"
-        ],
-        "functionalities": [
-            "All-Wheel Drive",
-            "City Safety collision avoidance technology",
-            "Power tailgate"
-        ],
-        "rentalPrice": "$150",
-        "rentalCompany": "Premium Car Rentals",
-        "address": "987 Example Road, Dnipro, Ukraine",
-        "rentalConditions": "Minimum age: 25\nValid driver's license\nSecurity deposit and insurance required",
-        "mileage": 6618
-    },
+    
     {
         "id": 9618,
         "year": 2020,

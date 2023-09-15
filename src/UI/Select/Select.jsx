@@ -31,6 +31,7 @@ const SelectButton = styled.button`
 const OptionsWrapper = styled.div`
   position: absolute;
   top: calc(100% + 4px);
+  /* top:0; */
   left: 0;
   right: 0;
   background: ${colors.mainBgColor};
@@ -45,7 +46,7 @@ box-shadow: 0px 4px 36px 0px rgba(247,247,251,0.8);
   max-height: 200px;
   overflow-y: auto;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-  padding: 14px 68px 14px 18px;
+  /* padding: 14px 18px 14px 18px; */
   z-index: 100;
   scrollbar-width: 8px;
   scrollbar-color: ${colors.disabled} transparent;

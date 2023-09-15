@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import TitlePage from "../components/TitlePage/TitlePage.jsx";
 import { Container, Page } from "./RentPage.styled.js";
 import CardList from "../components/CardList/CardList.jsx"
@@ -10,9 +10,9 @@ import carsData from '../data/DB/advertsCars.json';
 
 const RentPage = () => {
   const [filter, setFilter] = useState("");
-  const [models, setModels] = useState("Select model");
-  const [prices, setPrices] = useState("To $"); 
-  const [filteredCars, setFilteredCars] = useState([]); 
+  const [make, setMake] = useState("Select model");
+  const [rentalPrice, setRentalPrice] = useState("To $"); 
+    const [filteredCars, setFilteredCars] = useState([]); 
 
   // const token = useSelector(state => state.auth.token);
   // useEffect(() => {
@@ -28,37 +28,87 @@ const RentPage = () => {
   //   };
   //   fetchData();
   // }, [token]);
-useEffect(() => {
-    setFilteredCars(carsData);
-  }, []);
+// useEffect(() => {
+//     setFilteredCars(carsData);
+//   }, []);
 
+//   const handleFilterChange = (newFilter) => {
+//     setFilter(newFilter);
+//   };
+
+//   const handleCarChange = (newCarModel) => {
+//     setModels(newCarModel);
+//   };
+
+//   const handlePriceChange = (newPrice) => {
+//     setPrices(newPrice);
+//   };
+
+  // return (
+  //   <>
+  //     <Page>
+  //       <Container>
+  //         <TitlePage titlePage="Rent of cars" />
+  //          <NavMenu
+  //           filter={filter}
+  //           models={models}
+  //           prices={prices}
+  //           onFilterChange={handleFilterChange}
+  //           onCategoryChange={handleCarChange}
+  //           onPriceChange={handlePriceChange}
+  //           setFilteredCars={setFilteredCars}
+  //         />
+  //         <CardList items={filteredCars} />
+  //       </Container>
+  //     </Page>
   const handleFilterChange = (newFilter) => {
     setFilter(newFilter);
   };
-
-  const handleCarChange = (newCarModel) => {
-    setModels(newCarModel);
+    const handleModelChange = (newCarModel) => {
+   setMake(newCarModel);
   };
-
   const handlePriceChange = (newPrice) => {
-    setPrices(newPrice);
+    setRentalPrice(newPrice);
   };
 
-  return (
-    <>
-      <Page>
+// const handlePriceChange = (event) => {
+//   setRentalPrice(event.target.value);
+// };
+//перевіряємо у інпутах фільтри
+useEffect(() => {
+    const newFilteredCars = carsData.filter((car) => {
+      const isModelMatch =
+        make === "Select model" || car.make === make;
+     
+   // Конвертуємо рядок в число, видаляючи символ "$" та будь-які пробіли
+const numericRentalPrice = parseFloat(rentalPrice.replace(/\$|\s/g, ''));
+
+const isPriceMatch =
+  rentalPrice === "To $" || parseFloat(car.rentalPrice.replace(/\$|\s/g, '')) <= numericRentalPrice;
+
+
+      const isTextMatch =
+        filter === "" || car.mileage.toLowerCase().includes(filter.toLowerCase());
+      return isModelMatch && isPriceMatch && isTextMatch;
+    });
+    setFilteredCars(newFilteredCars);
+  }, [make, rentalPrice, filter]);
+
+    return (
+      <>
+        <Page>
         <Container>
-          <TitlePage titlePage="Rent of cars" />
-           <NavMenu
+             <TitlePage titlePage="Rent of cars"/>
+            <NavMenu
             filter={filter}
-            category={models}
-            ingredient={prices}
+            make={make}
+            rentalPrice={rentalPrice}
             onFilterChange={handleFilterChange}
-            onCategoryChange={handleCarChange}
-            onIngredientChange={handlePriceChange}
-            setFilteredCars={setFilteredCars}
-          />
-          <CardList items={filteredCars} />
+            onModelChange={handleModelChange}
+              onPriceChange={handlePriceChange}
+              setFilteredCars={setFilteredCars} 
+            />
+            <CardList items={filteredCars} />
         </Container>
       </Page>
     </>

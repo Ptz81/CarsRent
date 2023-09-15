@@ -18,7 +18,7 @@ export const NameCategory = styled.h2`
 export const CarList = styled.ul`
   display: flex;
   gap: 20px;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 50px;
 `;
 

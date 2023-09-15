@@ -69,16 +69,47 @@ left: 24px;
 z-index: 99;
 `
 
+// const Filter = ({ filter, onFilterChange, inputStyle, inputPrefix }) => {
+//   let InputComponent;
+//    if (inputStyle === 'active') {
+//     InputComponent = inputPrimary;
+//   } else if(inputStyle === 'secondary') {
+//     InputComponent = inputSecondary; 
+//   }
+  
+
+//   return (
+//    <div style={{ display: 'flex', alignItems: 'center', position:'relative' }}>
+//       <Prefix>{inputPrefix}</Prefix>
+//       <InputComponent
+//         type="text"
+//         name="text"
+//         placeholder="Enter the text"
+//         value={filter}
+//         onChange={onFilterChange}
+//       />
+//     </div>
+//   );
+// };
+
+// export default Filter;
+// Filter.propTypes = {
+//   filter: PropTypes.string.isRequired,
+//   onFilterChange: PropTypes.func.isRequired,
+//   inputStyle: PropTypes.string.isRequired,
+//   inputPrefix: PropTypes.string,
+// };
+// import React from 'react';
+
 const Filter = ({ filter, onFilterChange, inputStyle, inputPrefix }) => {
-  let InputComponent;
+    let InputComponent;
    if (inputStyle === 'active') {
     InputComponent = inputPrimary;
   } else if(inputStyle === 'secondary') {
     InputComponent = inputSecondary; 
   }
-
   return (
-   <div style={{ display: 'flex', alignItems: 'center', position:'relative' }}>
+    <div style={{ display: 'flex', alignItems: 'center', position:'relative' }}>
       <Prefix>{inputPrefix}</Prefix>
       <InputComponent
         type="text"
@@ -87,6 +118,16 @@ const Filter = ({ filter, onFilterChange, inputStyle, inputPrefix }) => {
         value={filter}
         onChange={onFilterChange}
       />
+      {/* <input
+        type="number"
+        placeholder="From"
+        onChange={(e) => onMileageChange(e.target.value, null)}
+      />
+      <input
+        type="number"
+        placeholder="To"
+        onChange={(e) => onMileageChange(null, e.target.value)}
+      /> */}
     </div>
   );
 };
@@ -95,6 +136,7 @@ export default Filter;
 Filter.propTypes = {
   filter: PropTypes.string.isRequired,
   onFilterChange: PropTypes.func.isRequired,
+  onMileageChange: PropTypes.func,
   inputStyle: PropTypes.string.isRequired,
   inputPrefix: PropTypes.string,
 };

@@ -3,7 +3,7 @@ import { colors } from '../../styles/GlobalStyles';
 import styled from '@emotion/styled';
 
 export const Title = styled.h1`
-
+text-align: center;
   font-family: var(--main-font-family);
   font-size: 32px;
   font-weight: 600;

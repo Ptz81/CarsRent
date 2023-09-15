@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import { colors } from "../../styles/GlobalStyles";
 
 export const Wrapper = styled.div`
-/* width: 274px; */
-  flex-basis: 274px;
+width: 274px;
+  /* flex-basis: 274px;  */
   display: flex;
   flex-direction: column;
 
@@ -11,13 +11,14 @@ export const Wrapper = styled.div`
   /* margin: 20px; */
 
   @media screen and (min-width: 768px) {
-    flex-basis: calc((100% - 20px) / 4);
-    flex-basis: 342px;
+    flex-basis: calc((100% - 20px) / 5);
+    /* width: 342px;
+    flex-basis: 342px; */
   }
 
   @media screen and (min-width: 1200px) {
-    /* flex-basis: calc((100% - 40px) / 7); */
-    flex-basis: 274px;
+    flex-basis: calc((100% - 40px) /5);
+    /* flex-basis: 274px; */
   }
 `;
 

@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import { colors } from '../../styles/GlobalStyles';
 
 export const Btn = styled.button`
-  color: #f3f3f3;
+  color: ${colors.textMainColor};
   text-align: center;
   font-family: Manrope;
   font-size: 12px;

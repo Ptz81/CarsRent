@@ -14,12 +14,12 @@ export const Page = styled.div`
   margin: 0 auto;
 `;
 export const Container = styled.div`
-  /* padding: 80px 20px 40px 20px; */
+  padding: 80px 20px 40px 20px;
   @media screen and (min-width: 768px) {
     /* padding: 140px 32px 60px 32px; */
   }
   @media screen and (min-width: 1200px) {
-    padding: 150px 128px 100px 128px;
+    /* padding: 150px 128px 100px 128px; */
   }
 `;
 export const FilterContainer = styled.div`
@@ -36,7 +36,7 @@ export const FilterContainer = styled.div`
     margin-top: 60px;
 
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1200px) {
     margin-top: 80px;
 
   }

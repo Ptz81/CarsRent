@@ -90,7 +90,7 @@ CardsFavorite.propTypes = {
   make: PropTypes.string,
   year: PropTypes.number,
   address: PropTypes.string,
-  accessories: PropTypes.array,
+  accessories: PropTypes.arrayOf(PropTypes.string),
   rentalCompany: PropTypes.string,
   model: PropTypes.string,
   img: PropTypes.string,

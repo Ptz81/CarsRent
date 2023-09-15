@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const FilterContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 14px;
 
   margin-top: 40px;
@@ -14,7 +15,7 @@ export const FilterContainer = styled.div`
     margin-top: 60px;
 
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1200px) {
     margin-top: 80px;
 
   }

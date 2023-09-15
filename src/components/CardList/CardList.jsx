@@ -13,8 +13,12 @@ const CardList = ({ items, onDel }) => {
   useEffect(() => {
     const changeNumberItems = () => {
       if (window.innerWidth > 1200) {
-        setContentPerPage(12);
-      } else setContentPerPage(6);
+        setContentPerPage(8);
+      } else if (window.innerWidth > 768) {
+        setContentPerPage(4);
+      } else {
+        setContentPerPage(2);
+      }
     };
     changeNumberItems();
 
@@ -58,7 +62,7 @@ const CardList = ({ items, onDel }) => {
           nextPage={nextPage}
           page={page}
           setPage={setPage}
-          pageType="favorite"
+          pageType="catalog"
         />
       </ContainerBtnPagination>
     </>
