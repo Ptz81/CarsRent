@@ -71,7 +71,7 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
         <Text>{ type}</Text>
         <Text>{ model }</Text>
         <Text>{ id }</Text>
-        <Text>{ advantages }</Text>
+        <Text style={{whiteSpace: "nowrap", width:"100px", overflow:'hidden'}}>{ advantages }</Text>
         </Description>
       
       <ListBtn>

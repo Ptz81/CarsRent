@@ -61,8 +61,8 @@ const RentPage = () => {
   //         <CardList items={filteredCars} />
   //       </Container>
   //     </Page>
-  const handleFilterChange = (newFilter) => {
-    setFilter(newFilter);
+  const handleFilterChange = (e) => {
+    setFilter(e.target.value);
   };
     const handleModelChange = (newCarModel) => {
    setMake(newCarModel);
@@ -76,7 +76,7 @@ const RentPage = () => {
 // };
 //перевіряємо у інпутах фільтри
 useEffect(() => {
-    const newFilteredCars = carsData.filter((car) => {
+    const filteredCars = carsData.filter((car) => {
       const isModelMatch =
         make === "Select model" || car.make === make;
      
@@ -87,12 +87,21 @@ const isPriceMatch =
   rentalPrice === "To $" || parseFloat(car.rentalPrice.replace(/\$|\s/g, '')) <= numericRentalPrice;
 
 
-      const isTextMatch =
-        filter === "" || car.mileage.toLowerCase().includes(filter.toLowerCase());
-      return isModelMatch && isPriceMatch && isTextMatch;
-    });
-    setFilteredCars(newFilteredCars);
-  }, [make, rentalPrice, filter]);
+      // const mileageFilter = filter.trim();
+    const isMileageMatch =
+      filter === "" ||filter.includes('-');
+      (filter.includes('-')
+        ? parseMileageRange(filter, car.mileage)
+        : parseInt(filter) <= car.mileage);
+   return isModelMatch && isPriceMatch && isMileageMatch;
+  });
+  setFilteredCars(filteredCars);
+}, [make, rentalPrice, filter]);
+  
+  function parseMileageRange(range, carMileage) {
+  const [from, to] = range.split('-').map((num) => parseInt(num.trim()));
+  return carMileage >= from && carMileage <= to;
+}
 
     return (
       <>

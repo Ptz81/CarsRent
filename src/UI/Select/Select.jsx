@@ -2,14 +2,20 @@ import { useState } from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import { colors } from "../../styles/GlobalStyles";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 const CustomSelect = styled.div`
   position: relative;
-  max-width: 335px;
+  width: 125px;
+  &:first-of-type{
+    width: 224px;
+  }
+
+  
 `;
 
 const SelectButton = styled.button`
-  width: 335px;
+  width: 100%;
   padding: 18px 24px;
   border-radius: 14px;
   font-size: 14px;
@@ -21,8 +27,8 @@ const SelectButton = styled.button`
   cursor: pointer;
   margin-bottom: 4px;
   @media only screen and (min-width: 768px) {
-    width: auto;
-    padding: 14px 18px;
+    width: 100%;
+    padding: 14px 10px 14px 18px;
     font-size: 17px;
     margin-bottom: 0;
   }
@@ -102,6 +108,7 @@ const CustomSelectComponent = ({ options, value, onChange, placeholder }) => {
           selectedValue
         )}
       </SelectButton>
+       {isOpen ? <FiChevronUp width={20} height={20} style={{position:'absolute', top:"15px", right: "20px"}} /> : <FiChevronDown style={{position:'absolute', top:"15px", right: "20px"}}/>}
       {isOpen && (
         <OptionsWrapper isOpen={isOpen}>
           {options.map((option) => (

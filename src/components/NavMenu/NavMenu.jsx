@@ -1,18 +1,18 @@
 // import { useState, useEffect } from "react";
 import { FilterContainer } from "./NavMenu.styled.js";
-import Filter from "../Filter/Filter.jsx";
 import PropTypes from "prop-types";
 import CustomSelectComponent from "../../UI/Select/Select.jsx";
 // import { setToken, instance } from '../../api/auth';
 // import { useSelector } from "react-redux";
 import carsData from '../../data/DB/advertsCars.json';
+import InputFilter from "../Filter/Filter.jsx";
 
 
 const NavMenu = ({
   filter,
   make,
   rentalPrice,
-  mileage,
+  // mileage,
   onFilterChange,
   onModelChange,
   onPriceChange,
@@ -109,10 +109,10 @@ const NavMenu = ({
     <FilterContainer>
       
       <CustomSelectComponent
-        options={["Select model", ...uniqueModels]}
+        options={["Enter the text", ...uniqueModels]}
         value={make} 
         onChange={onModelChange}
-        placeholder="Select model"
+        placeholder="Enter the text"
       />
       <CustomSelectComponent
         options={["To $", ...uniqueRentalPrices]} 
@@ -121,22 +121,24 @@ const NavMenu = ({
         placeholder="To $"
       />
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <Filter
-          value={mileage}
+        <InputFilter
+          // value={mileage}
           filter={filter}
           inputStyle="active"
+          // onChange={(e) => onFilterChange(e.target.value)}
           onFilterChange={onFilterChange}
           inputPrefix="From"
-          name="fromFilter"
+          name="from Filter"
         />
-        <Filter
+        {/* <InputFilter
           value={mileage}
           filter={filter}
           inputStyle="secondary"
+          onChange={(e) => onFilterChange(e.target.value)}
           onFilterChange={onFilterChange}
           inputPrefix="To"
           name="toFilter"
-        />
+        /> */}
       </div>
       
     </FilterContainer>

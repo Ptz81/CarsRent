@@ -36,10 +36,8 @@ max-width: 166px;
     :focus::placeholder {
     color: transparent; 
   }
-
   ::before {
     content: "";
-
     background-repeat: no-repeat;
     background-position: left center; 
     position: absolute;
@@ -51,7 +49,6 @@ max-width: 166px;
     z-index: 10; 
   }
 `;
-
 const inputSecondary = styled(inputPrimary)`
 border-radius: 0 14px 14px 0;
 border-right: 0;
@@ -60,7 +57,6 @@ border-left: 1px solid rgba(138, 138, 137, 0.2);
     padding-left: 50px;
   }
 `
-
 const Prefix = styled.span`
 margin-right: 10px;
 position: absolute;
@@ -69,39 +65,7 @@ left: 24px;
 z-index: 99;
 `
 
-// const Filter = ({ filter, onFilterChange, inputStyle, inputPrefix }) => {
-//   let InputComponent;
-//    if (inputStyle === 'active') {
-//     InputComponent = inputPrimary;
-//   } else if(inputStyle === 'secondary') {
-//     InputComponent = inputSecondary; 
-//   }
-  
-
-//   return (
-//    <div style={{ display: 'flex', alignItems: 'center', position:'relative' }}>
-//       <Prefix>{inputPrefix}</Prefix>
-//       <InputComponent
-//         type="text"
-//         name="text"
-//         placeholder="Enter the text"
-//         value={filter}
-//         onChange={onFilterChange}
-//       />
-//     </div>
-//   );
-// };
-
-// export default Filter;
-// Filter.propTypes = {
-//   filter: PropTypes.string.isRequired,
-//   onFilterChange: PropTypes.func.isRequired,
-//   inputStyle: PropTypes.string.isRequired,
-//   inputPrefix: PropTypes.string,
-// };
-// import React from 'react';
-
-const Filter = ({ filter, onFilterChange, inputStyle, inputPrefix }) => {
+const InputFilter = ({ filter, onFilterChange, inputStyle, inputPrefix }) => {
     let InputComponent;
    if (inputStyle === 'active') {
     InputComponent = inputPrimary;
@@ -118,22 +82,12 @@ const Filter = ({ filter, onFilterChange, inputStyle, inputPrefix }) => {
         value={filter}
         onChange={onFilterChange}
       />
-      {/* <input
-        type="number"
-        placeholder="From"
-        onChange={(e) => onMileageChange(e.target.value, null)}
-      />
-      <input
-        type="number"
-        placeholder="To"
-        onChange={(e) => onMileageChange(null, e.target.value)}
-      /> */}
     </div>
   );
 };
 
-export default Filter;
-Filter.propTypes = {
+export default InputFilter;
+InputFilter.propTypes = {
   filter: PropTypes.string.isRequired,
   onFilterChange: PropTypes.func.isRequired,
   onMileageChange: PropTypes.func,

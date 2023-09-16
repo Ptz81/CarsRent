@@ -8,7 +8,7 @@ import ButtonPagination from '../../UI/ButtonPagination/ButtonPagination.jsx';
 
 
 const CardList = ({ items, onDel }) => {
-  const [contentPerPage, setContentPerPage] = useState(12);
+  const [contentPerPage, setContentPerPage] = useState(8);
 
   useEffect(() => {
     const changeNumberItems = () => {

@@ -17,7 +17,7 @@ width: 274px;
   }
 
   @media screen and (min-width: 1200px) {
-    flex-basis: calc((100% - 40px) /5);
+    flex-basis: calc((100% - 40px) /6);
     /* flex-basis: 274px; */
   }
 `;
