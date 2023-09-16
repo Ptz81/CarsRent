@@ -4,7 +4,7 @@ import { colors } from "../../styles/GlobalStyles";
 
 const inputPrimary= styled.input`
 max-width: 166px;
-  padding: 18px 24px;
+  padding: 14px 22px 14px 70px;
   padding-left: 70px;
   border: 1px solid rgba(243, 243, 243, 0.2);
   border-right: 1px solid rgba(138, 138, 137, 0.2);
@@ -16,7 +16,7 @@ max-width: 166px;
   z-index:9;
   @media only screen and (min-width: 768px) {
     width: 160px;
-    padding: 15px;
+    padding: 14px;
     padding-left: 70px;
     font-size: 17px;
   }
@@ -29,7 +29,7 @@ max-width: 166px;
         color: #f3f3f3;
         font-size: 14px;
         @media only screen and (min-width: 768px){
-    padding: 15px ;
+    padding: 14px ;
     font-size: 17px;
   }
     }

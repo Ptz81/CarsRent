@@ -2,28 +2,20 @@ import styled from "@emotion/styled";
 import { colors } from "../../styles/GlobalStyles";
 
 export const Wrapper = styled.div`
-width: 274px;
-  /* flex-basis: 274px;  */
+width: 461px;
   display: flex;
   flex-direction: column;
-
-  margin-bottom: 40px;
-  /* margin: 20px; */
-
-  @media screen and (min-width: 768px) {
-    flex-basis: calc((100% - 20px) / 5);
-    /* width: 342px;
-    flex-basis: 342px; */
-  }
-
-  @media screen and (min-width: 1200px) {
-    flex-basis: calc((100% - 40px) /6);
-    /* flex-basis: 274px; */
-  }
+  margin: 40px;
 `;
 
 export const SubTitle = styled.span`
 color: ${colors.accentColor};
+`
+export const About = styled.p`
+margin-top: 14px;
+margin-bottom: 24px;
+font-size: 14px;
+line-height: 20px;
 `
 
 export const Text = styled.p`
@@ -40,11 +32,27 @@ export const Text = styled.p`
   }
 `
 
+export const Functionality = styled.div`
+width: 100%;
+display: flex;
+flex-direction: column;
+`
+export const SecondTitle = styled.p`
+font-weight: 600;
+font-size: 14px;
+line-height: 20px;
+margin-bottom: 8px;
+`
+export const CardWrapper = styled.div`
+position: relative;
+width: auto;
+margin-bottom: 14px;
+`
 export const Img = styled.img`
   background-position: center top;
   object-fit: cover;
-  width: 274px;
-  height: 268px;
+  width: 100%;
+  height: 248px;
   border-radius: 14px;
 `;
 
@@ -54,10 +62,7 @@ export const Info = styled.div`
 display: flex;
 justify-content: space-between;
 `;
-export const CardWrapper = styled.div`
-position: relative;
-width: 274px;
-`
+
 export const Favorite = styled.img`
   position: absolute;
   cursor: pointer;
@@ -70,20 +75,27 @@ export const Favorite = styled.img`
   }
 `;
 
-
+export const Conditions = styled.div`
+margin-top: 24px;
+margin-bottom: 17px;
+`
+export const ConditionsType = styled.div`
+display: flex;
+border-radius: 35px;
+background-color: ${colors.disabled};
+color: ${colors.textMainColor};
+font-size: 12px;
+line-height: 18px;
+`
 export const Description = styled.div`
   color: ${colors.textMainColor};
   display: flex;
   margin-bottom: 4px;
-  /* font-family: inherit;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; */
 
-  @media screen and (min-width: 768px) {
+
+  /* @media screen and (min-width: 768px) {
     font-size: 16px;
-  }
+  } */
 `;
 export const Title = styled.div`
   color: ${colors.textMainColor};
@@ -94,26 +106,8 @@ export const Title = styled.div`
   line-height: 24px;
   /* margin-bottom: 8px; */
 `;
-export const Price = styled.div`
-  color: ${colors.textMainColor};
-  font-family: inherit;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  /* margin-left: 140px; */
 
-  /* @media screen and (min-width: 768px) {
-    font-size: 24px;
-    line-height: 32px;
-  } */
 
-  /* margin-bottom: 8px; */
-`;
-export const ListBtn = styled.div`
-  width: auto;
- margin-top: 24px;
-`;
 export const ButtonSee = styled.p`
   padding: 12px 40px;
   border-radius: 12px;
@@ -125,7 +119,8 @@ export const ButtonSee = styled.p`
   font-weight: 600;
   line-height: 18px;
   text-align: center;
- 
+ width: auto;
+ margin-top: 24px;
 
   @media screen and (min-width: 768px) {
     padding: 18px 44px;

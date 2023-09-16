@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// import { ReactComponent as ArrowRight } from '../../assets/arrowRight.svg';
-// import { ReactComponent as ArrowLeft } from '../../assets/arrowLeft.svg';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-
 import { Btn, Wrapper, Number, ButtonArrow } from './ButtonPagination.styled.js';
 
 const ButtonPagination = ({

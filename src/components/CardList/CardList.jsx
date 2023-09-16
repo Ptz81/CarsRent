@@ -7,6 +7,7 @@ import Pagination from '../../Pagination/Pagination.jsx';
 import ButtonPagination from '../../UI/ButtonPagination/ButtonPagination.jsx';
 
 
+
 const CardList = ({ items, onDel }) => {
   const [contentPerPage, setContentPerPage] = useState(8);
 

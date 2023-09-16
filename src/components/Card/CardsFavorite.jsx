@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { FaHeart } from "react-icons/fa"; 
 import styled from "@emotion/styled";
-import GreyPlugL from '../../assets/greyPlug/greyPlugL.svg';
+import GreyPlugL from '../../assets/GreyPlug/GreyPlugL.svg';
 import {
   Wrapper,
   Img,
@@ -15,9 +15,12 @@ import {
   CardWrapper,
   Price,
   Box,
-  
+  SubTitle
 } from "./CardsFavorite.styled.js";
 import { colors } from "../../styles/GlobalStyles";
+import Modal from "../LoadModal/Modal.jsx";
+import { useEffect, useState } from "react";
+import CardsModal from "./CardsModal";
 
 
 const HeartIcon = styled(FaHeart)`
@@ -36,6 +39,32 @@ const HeartIcon = styled(FaHeart)`
 `;
 
 const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, accessories, rentalPrice, img, onDelete }) => {
+  const [isOpen, setIsOpen] = useState(false);
+    const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape" && isOpen) {
+      setIsOpen(false);
+    }
+  };
+
+  const handleClickOutside = (event) => {
+    if (CardWrapper.current && !CardWrapper.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+ useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isOpen]);
+
   const propsImg = Object.values({ img })[0];
   
   const addressText = address || "";
@@ -58,8 +87,10 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
         <HeartIcon size={32} onClick={() => onDelete(id)} />
       </CardWrapper>
       <Info>
-        {/* <Title>{make}</Title> */}
-        <Title>{make}, {year}</Title>
+        <Title>{make}
+          <SubTitle> { model}</SubTitle>  ,
+           {year}
+        </Title>
         <Price>{ rentalPrice}</Price>
         </Info>
         <Description>
@@ -75,10 +106,14 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
         </Description>
       
       <ListBtn>
-        <Link style={{ textDecoration: "none" }} to={`/catalog/${id}`}>
-          <ButtonSee>Learn more</ButtonSee>
-        </Link>
+        <ButtonSee onClick={handleToggle} >Learn more</ButtonSee>
       </ListBtn>
+    
+      {isOpen && (
+        <Modal isOpen={isOpen} closeModal={() => setIsOpen(false)}>
+          <CardsModal/>
+        </Modal>
+      )}
     </Wrapper>
   );
 };

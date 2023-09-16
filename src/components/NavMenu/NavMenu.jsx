@@ -6,6 +6,7 @@ import CustomSelectComponent from "../../UI/Select/Select.jsx";
 // import { useSelector } from "react-redux";
 import carsData from '../../data/DB/advertsCars.json';
 import InputFilter from "../Filter/Filter.jsx";
+import { ButtonSee } from "../Card/CardsFavorite.styled.js";
 
 
 const NavMenu = ({
@@ -120,7 +121,7 @@ const NavMenu = ({
         onChange={onPriceChange}
         placeholder="To $"
       />
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginLeft: "18px" }}>
         <InputFilter
           // value={mileage}
           filter={filter}
@@ -130,17 +131,18 @@ const NavMenu = ({
           inputPrefix="From"
           name="from Filter"
         />
-        {/* <InputFilter
-          value={mileage}
+        <InputFilter
+          // value={mileage}
           filter={filter}
           inputStyle="secondary"
-          onChange={(e) => onFilterChange(e.target.value)}
+          // onChange={(e) => onFilterChange(e.target.value)}
           onFilterChange={onFilterChange}
           inputPrefix="To"
           name="toFilter"
-        /> */}
+        />
+       
       </div>
-      
+       <ButtonSee>Search</ButtonSee>
     </FilterContainer>
   );
 };
