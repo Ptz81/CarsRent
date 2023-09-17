@@ -1,4 +1,4 @@
-import{n as o,c as t,j as n}from"./index-9992320d.js";const e="/CarsRent/assets/notfoundpage-1654d9d0.png",i=o.div`
+import{n as o,c as t,j as n}from"./index-e0ec0f59.js";const e="/CarsRent/assets/notfoundpage-1654d9d0.png",i=o.div`
     position: relative;
     max-width: 465px;
     display: flex;

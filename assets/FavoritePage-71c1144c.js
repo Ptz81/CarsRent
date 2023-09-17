@@ -1,4 +1,4 @@
-import{n,j as i}from"./index-9992320d.js";import{T as a}from"./TitlePage-f3dc6438.js";const e=n.div`
+import{n,j as i}from"./index-e0ec0f59.js";import{T as a}from"./TitlePage-c999f7e3.js";const e=n.div`
   position: relative;
   // background: #0a0a11;
   margin: 0 auto;

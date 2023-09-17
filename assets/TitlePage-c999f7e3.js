@@ -1,4 +1,4 @@
-import{n as t,c as n,P as i,j as o}from"./index-9992320d.js";const s=t.h1`
+import{n as t,c as n,P as i,j as o}from"./index-e0ec0f59.js";const s=t.h1`
 text-align: center;
   font-family: var(--main-font-family);
   font-size: 32px;
