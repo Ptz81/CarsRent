@@ -9,12 +9,41 @@ import {
   NameAndType,
   NameCar,
   Cars,
+  CardWrapper
 } from './PopularCategories.styled.js';
+import Modal from '../LoadModal/Modal';
+import CardsModal from '../Card/CardsModal';
 
 const PopularCategories = ({ categoryCar }) => {
   const [cardsPerRow, setCardsPerRow] = useState(4);
   const [carsInCategory, setCarsInCategory] = useState([]);
-    
+     const [isOpen, setIsOpen] = useState(false);
+    const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+
+
+  const handleClickOutside = (event) => {
+    if (CardWrapper.current && !CardWrapper.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+     const handleKeyDown = (event) => {
+    if (event.key === "Escape" && isOpen) {
+      setIsOpen(false);
+    }
+  };
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("click", handleClickOutside);
+    };
+ }, [isOpen]);
+  
   useEffect(() => {
     const carsOfType = carsData.filter((car) =>
       car.type.toLowerCase() === categoryCar.toLowerCase()
@@ -55,11 +84,16 @@ const PopularCategories = ({ categoryCar }) => {
 
             <NameAndType>
               <NameCar>{car.make}</NameCar>
-              <Cars to={`/car/${car.id}`}>See more</Cars>
+              <Cars onClick={handleToggle}>See more</Cars>
             </NameAndType>
           </li>
         ))}
       </CarList>
+       {isOpen && (
+        <Modal isOpen={isOpen} closeModal={() => setIsOpen(false)}>
+          <CardsModal/>
+        </Modal>
+      )}
     </div>
   );
 };

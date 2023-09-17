@@ -19,10 +19,11 @@ const ModalOverlay = styled.div`
 const ModalContent = styled.div`
   background-color: #fff;
   width: 540px;
-  height: 720px;
+  min-height: 720px;
   position: relative;
-  padding: 20px;
+  padding: 40px;
   overflow-y: auto;
+  border-radius: 24px;
 `;
 
 const CloseButton = styled.div`
@@ -37,28 +38,6 @@ const Modal = ({ isOpen, closeModal, children}) => {
   const handleModalClick = (event) => {
     event.stopPropagation();
   };
-
-  
-
-//   useEffect(() => {
-//     const handleClickOutside = (event) => {
-//       if (!event.target.closest(".ModalContent")) {
-//         onClose();
-//       }
-//     };
-// const handleKeyDown = (event) => {
-//     if (event.key === "Escape") {
-//       onClose();
-//     }
-//   };
-//     document.addEventListener("keydown", handleKeyDown);
-//     document.addEventListener("click", handleClickOutside);
-//     return () => {
-//       document.removeEventListener("keydown", handleKeyDown);
-//       document.removeEventListener("click", handleClickOutside);
-//     };
-//   }, [isOpen, onClose]);
-
   return (
     <>
       {isOpen && (

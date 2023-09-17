@@ -13,7 +13,7 @@ import { ButtonMain } from "../../UI/Button/Button";
 const HeroSection = ({ title, description, children }) => {
   const navigate = useNavigate();
   const handleBtnClick = () => {
-    navigate("/catalog");
+    navigate("/catalog/1");
   };
   return (
     <Section>

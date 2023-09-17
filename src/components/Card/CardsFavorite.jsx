@@ -2,7 +2,6 @@
 import PropTypes from "prop-types";
 import { FaHeart } from "react-icons/fa"; 
 import styled from "@emotion/styled";
-import GreyPlugL from '../../assets/GreyPlug/GreyPlugL.svg';
 import {
   Wrapper,
   Img,
@@ -32,23 +31,19 @@ const HeartIcon = styled(FaHeart)`
   stroke: white;
   stroke-width: 30px; 
   &:hover,
-  &:focus{
+  &:focus, &:active{
     fill:${colors.hoverColor};
     stroke-opacity: 0.2;
   }
 `;
 
-const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, accessories, rentalPrice, img, onDelete }) => {
+const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, accessories, mileage,  description, fuelConsumption, engineSize, functionalities, rentalPrice, img, onDelete }) => {
   const [isOpen, setIsOpen] = useState(false);
     const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Escape" && isOpen) {
-      setIsOpen(false);
-    }
-  };
+ 
 
   const handleClickOutside = (event) => {
     if (CardWrapper.current && !CardWrapper.current.contains(event.target)) {
@@ -56,7 +51,12 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
     }
   };
 
- useEffect(() => {
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+    if (event.key === "Escape" && isOpen) {
+      setIsOpen(false);
+    }
+  };
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("click", handleClickOutside);
     return () => {
@@ -77,9 +77,7 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
     <Wrapper>
       <CardWrapper>
           {!propsImg || propsImg === '' ? (
-        <Box>
-          <GreyPlugL />
-        </Box>
+        <Box/>
       ) : (
         <Img src={img}/>
       )}
@@ -88,7 +86,7 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
       </CardWrapper>
       <Info>
         <Title>{make}
-          <SubTitle> { model}</SubTitle>  ,
+          <SubTitle> { model}</SubTitle> ,
            {year}
         </Title>
         <Price>{ rentalPrice}</Price>
@@ -100,7 +98,7 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
       </Description>
               <Description>
         <Text>{ type}</Text>
-        <Text>{ model }</Text>
+        <Text style={{whiteSpace: "nowrap", width:"100px", overflow:'hidden'}}>{ model }</Text>
         <Text>{ id }</Text>
         <Text style={{whiteSpace: "nowrap", width:"100px", overflow:'hidden'}}>{ advantages }</Text>
         </Description>
@@ -111,7 +109,20 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
     
       {isOpen && (
         <Modal isOpen={isOpen} closeModal={() => setIsOpen(false)}>
-          <CardsModal/>
+          <CardsModal
+             id={id}
+            make={make}
+            model={model}
+            year={year}
+            type={type}
+            rentalPrice={rentalPrice}
+            mileage={mileage}
+            fuelConsumption={fuelConsumption}
+            description={description}
+            engineSize={engineSize}
+            functionalities={functionalities}
+            img={img}
+          />
         </Modal>
       )}
     </Wrapper>
@@ -132,5 +143,12 @@ CardsFavorite.propTypes = {
   type: PropTypes.string, 
   rentalPrice: PropTypes.string,
   CarThumb: PropTypes.string, 
+  mileage: PropTypes.number,
+  description: PropTypes.string,
+  fuelConsumption: PropTypes.string,
+  engineSize: PropTypes.string,
   onDelete: PropTypes.func, 
+  photoLink: PropTypes.string,
+  functionalities: PropTypes.arrayOf(PropTypes.string),
+
 };

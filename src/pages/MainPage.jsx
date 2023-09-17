@@ -2,7 +2,6 @@ import HeroSection from '../components/Hero/Hero.jsx';
 import PopularCategories from '../components/PopularCategories/PopularCategories.jsx';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
-// import LoadBtn from '../components/LoadBtn/LoadBtn.jsx'
 import { ButtonMain } from '../UI/Button/Button.jsx';
 
 const Page = styled.div`

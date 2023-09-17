@@ -3,7 +3,7 @@ import { colors } from '../../styles/GlobalStyles';
 
 export const Section = styled.section`
   padding: 20px;
-  background-color: ${colors.mainBgColor};
+  background-color: ${colors.disabled};
   border-top: 1px solid rgba(243, 243, 243, 0.2);
   display: flex;
   justify-content: space-between;

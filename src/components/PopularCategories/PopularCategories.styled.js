@@ -67,3 +67,7 @@ export const Cars = styled(Link)`
     line-height: 1.13;
   }
 `;
+export const CardWrapper = styled.div`
+position: relative;
+width: 274px;
+`

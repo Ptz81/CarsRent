@@ -2,10 +2,9 @@ import styled from "@emotion/styled";
 import { colors } from "../../styles/GlobalStyles";
 
 export const Wrapper = styled.div`
-width: 461px;
   display: flex;
   flex-direction: column;
-  margin: 40px;
+
 `;
 
 export const SubTitle = styled.span`
@@ -81,6 +80,8 @@ margin-bottom: 17px;
 `
 export const ConditionsType = styled.div`
 display: flex;
+margin: 10px;
+justify-content: space-between;
 border-radius: 35px;
 background-color: ${colors.disabled};
 color: ${colors.textMainColor};
@@ -119,7 +120,7 @@ export const ButtonSee = styled.p`
   font-weight: 600;
   line-height: 18px;
   text-align: center;
- width: auto;
+ max-width: 168px;
  margin-top: 24px;
 
   @media screen and (min-width: 768px) {
@@ -153,14 +154,14 @@ export const ButtonTrash = styled.div`
 export const Box = styled.div`
 background-position: center top;
 background-size: cover;
-height: 360px;
+height: 248px;
 justify-content: space-around;
   align-items: center;
   display: flex;
-  border-radius: 8px;
+  border-radius: 14px;
   background: rgba(22, 31, 55, 0.5);
 
-@media screen and (min-width: 1440px) {
+/* @media screen and (min-width: 1440px) {
   height: 400px;
-}
+} */
 `;

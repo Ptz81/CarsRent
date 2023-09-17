@@ -13,33 +13,79 @@ const NavMenu = ({
   filter,
   make,
   rentalPrice,
-  // mileage,
+  mileage,
   onFilterChange,
   onModelChange,
   onPriceChange,
   // setFilteredCars,
 }) => {
 
-   // Створення масиву унікальних категорій
  const uniqueModels = Array.from(
   new Set(carsData.map(item => item.make))
 );
- // Створення масиву унікальних інгредієнтів
+
  const uniqueRentalPrices = Array.from(
   new Set(carsData.map(item => item.rentalPrice))
 );
-  // const [myCars, setMyCars] = useState([]);
-  // const [models, setModels] = useState([]);
-  // const [prices, setPrices] = useState([]); 
-  // const [fromFilter, setFromFilter] = useState(""); 
-  // const [toFilter, setToFilter] = useState("");
+ 
+  
+  return (
+    <FilterContainer>
+      
+      <CustomSelectComponent
+        options={["Enter the text", ...uniqueModels]}
+        value={make} 
+        onChange={onModelChange}
+        placeholder="Enter the text"
+      />
+      <CustomSelectComponent
+        options={["To $", ...uniqueRentalPrices]} 
+        value={rentalPrice} 
+        onChange={onPriceChange}
+        placeholder="To $"
+      />
+      <div style={{ display: 'flex', alignItems: 'center', marginLeft: "18px" }}>
+        <InputFilter
+          value={mileage}
+          filter={filter}
+          inputStyle="active"
+          onFilterChange={onFilterChange}
+          inputPrefix="From"
+          name="from Filter"
+        />
+        <InputFilter
+          value={mileage}
+          filter={filter}
+          inputStyle="secondary"
+          onFilterChange={onFilterChange}
+          inputPrefix="To"
+          name="toFilter"
+        />
+       
+      </div>
+       <ButtonSee>Search</ButtonSee>
+    </FilterContainer>
+  );
+};
 
+export default NavMenu;
+
+NavMenu.propTypes = {
+  make: PropTypes.string,
+  rentalPrice: PropTypes.string,
+  mileage: PropTypes.number,
+  onModelChange: PropTypes.func.isRequired,
+  onPriceChange: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+  onFilterChange: PropTypes.func.isRequired,
+  setFilteredCars: PropTypes.func.isRequired,
+};
 //   const token = useSelector(state => state.auth.token);
 //  useEffect(() => {
 //   setToken(token);
 //   const fetchData = async () => {
 //     try {
-//       const res = await instance.get('api/catalog/search?limit=60');
+//       const res = await instance.get('api/catalog/search?limit=40');
 //       const data = res.data;
 //       setMyCars(data.hits);
 
@@ -106,59 +152,6 @@ const NavMenu = ({
 
 
 
-  return (
-    <FilterContainer>
-      
-      <CustomSelectComponent
-        options={["Enter the text", ...uniqueModels]}
-        value={make} 
-        onChange={onModelChange}
-        placeholder="Enter the text"
-      />
-      <CustomSelectComponent
-        options={["To $", ...uniqueRentalPrices]} 
-        value={rentalPrice} 
-        onChange={onPriceChange}
-        placeholder="To $"
-      />
-      <div style={{ display: 'flex', alignItems: 'center', marginLeft: "18px" }}>
-        <InputFilter
-          // value={mileage}
-          filter={filter}
-          inputStyle="active"
-          // onChange={(e) => onFilterChange(e.target.value)}
-          onFilterChange={onFilterChange}
-          inputPrefix="From"
-          name="from Filter"
-        />
-        <InputFilter
-          // value={mileage}
-          filter={filter}
-          inputStyle="secondary"
-          // onChange={(e) => onFilterChange(e.target.value)}
-          onFilterChange={onFilterChange}
-          inputPrefix="To"
-          name="toFilter"
-        />
-       
-      </div>
-       <ButtonSee>Search</ButtonSee>
-    </FilterContainer>
-  );
-};
-
-export default NavMenu;
-
-NavMenu.propTypes = {
-  make: PropTypes.string,
-  rentalPrice: PropTypes.string,
-  mileage: PropTypes.number,
-  onModelChange: PropTypes.func.isRequired,
-  onPriceChange: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
-  onFilterChange: PropTypes.func.isRequired,
-  setFilteredCars: PropTypes.func.isRequired,
-};
 // import { useState, useEffect } from 'react';
 // import Filter from "../Filter/Filter.jsx";
 // import { FilterContainer } from "./NavMenu.styled.js";

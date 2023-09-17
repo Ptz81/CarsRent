@@ -19,11 +19,11 @@ const RentPage = () => {
   //   setToken(token);
   //   const fetchData = async () => {
   //     try {
-  //       const res = await instance.get('api/recipes/search?limit=90');
+  //       const res = await instance.get('api/catalog/search?limit=40');
   //       const data = res.data;
-  //       setFilteredCocktails(data.hits);
+  //       setFilteredCars(data.hits);
   //     } catch (error) {
-  //       console.error('Error fetching cocktails', error);
+  //       console.error('Error fetching cars', error);
   //     }
   //   };
   //   fetchData();
@@ -32,35 +32,7 @@ const RentPage = () => {
 //     setFilteredCars(carsData);
 //   }, []);
 
-//   const handleFilterChange = (newFilter) => {
-//     setFilter(newFilter);
-//   };
 
-//   const handleCarChange = (newCarModel) => {
-//     setModels(newCarModel);
-//   };
-
-//   const handlePriceChange = (newPrice) => {
-//     setPrices(newPrice);
-//   };
-
-  // return (
-  //   <>
-  //     <Page>
-  //       <Container>
-  //         <TitlePage titlePage="Rent of cars" />
-  //          <NavMenu
-  //           filter={filter}
-  //           models={models}
-  //           prices={prices}
-  //           onFilterChange={handleFilterChange}
-  //           onCategoryChange={handleCarChange}
-  //           onPriceChange={handlePriceChange}
-  //           setFilteredCars={setFilteredCars}
-  //         />
-  //         <CardList items={filteredCars} />
-  //       </Container>
-  //     </Page>
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
   };
@@ -71,23 +43,14 @@ const RentPage = () => {
     setRentalPrice(newPrice);
   };
 
-// const handlePriceChange = (event) => {
-//   setRentalPrice(event.target.value);
-// };
-//перевіряємо у інпутах фільтри
 useEffect(() => {
     const filteredCars = carsData.filter((car) => {
       const isModelMatch =
         make === "Select model" || car.make === make;
-     
-   // Конвертуємо рядок в число, видаляючи символ "$" та будь-які пробіли
 const numericRentalPrice = parseFloat(rentalPrice.replace(/\$|\s/g, ''));
-
 const isPriceMatch =
   rentalPrice === "To $" || parseFloat(car.rentalPrice.replace(/\$|\s/g, '')) <= numericRentalPrice;
 
-
-      // const mileageFilter = filter.trim();
     const isMileageMatch =
       filter === "" ||filter.includes('-');
       (filter.includes('-')

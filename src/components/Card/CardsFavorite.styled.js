@@ -17,7 +17,7 @@ width: 274px;
   }
 
   @media screen and (min-width: 1200px) {
-    flex-basis: calc((100% - 40px) /6);
+    flex-basis: calc((100% - 40px) /7);
     /* flex-basis: 274px; */
   }
 `;
@@ -158,14 +158,14 @@ export const ButtonTrash = styled.div`
 export const Box = styled.div`
 background-position: center top;
 background-size: cover;
-height: 360px;
+height: 268px;
 justify-content: space-around;
   align-items: center;
   display: flex;
   border-radius: 8px;
   background: rgba(22, 31, 55, 0.5);
-
+/* 
 @media screen and (min-width: 1440px) {
   height: 400px;
-}
+} */
 `;
