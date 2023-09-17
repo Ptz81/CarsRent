@@ -16,7 +16,7 @@ import {
   Box,
   SubTitle
 } from "./CardsFavorite.styled.js";
-import { colors } from "../../styles/GlobalStyles";
+// import { colors } from "../../styles/GlobalStyles";
 import Modal from "../LoadModal/Modal.jsx";
 import { useEffect, useState } from "react";
 import CardsModal from "./CardsModal";
@@ -27,23 +27,27 @@ const HeartIcon = styled(FaHeart)`
   position: absolute;
   top: 14px;
   right: 14px;
-  fill: transparent;
+  fill: ${(props) => (props.favorite ? 'blue' : 'transparent')};
   stroke: white;
-  stroke-width: 30px; 
+  stroke-width: 30px;
   &:hover,
-  &:focus, &:active{
-    fill:${colors.hoverColor};
+  &:focus,
+  &:active {
+    fill: ${(props) => (props.favorite ? 'blue' : 'transparent')};
     stroke-opacity: 0.2;
   }
 `;
-
-const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, accessories, mileage,  description, fuelConsumption, engineSize, functionalities, rentalPrice, img, onDelete }) => {
+const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, accessories, mileage,  description, fuelConsumption, engineSize, functionalities, rentalPrice, img }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [favorite, setFavorite] = useState(false);
     const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
- 
+  const toggleFavorite = () => {
+    setFavorite(!favorite);
+    
+  };
 
   const handleClickOutside = (event) => {
     if (CardWrapper.current && !CardWrapper.current.contains(event.target)) {
@@ -82,11 +86,16 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
         <Img src={img}/>
       )}
         
-        <HeartIcon size={32} onClick={() => onDelete(id)} />
+      <HeartIcon
+          size={32}
+          onClick={toggleFavorite}
+           favorite={favorite}
+        />
+
       </CardWrapper>
       <Info>
         <Title>{make}
-          <SubTitle> { model}</SubTitle> ,
+          <SubTitle> { model},</SubTitle>
            {year}
         </Title>
         <Price>{ rentalPrice}</Price>
@@ -122,6 +131,7 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
             engineSize={engineSize}
             functionalities={functionalities}
             img={img}
+            address={address}
           />
         </Modal>
       )}
@@ -130,7 +140,9 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
 };
 
 export default CardsFavorite;
-
+HeartIcon.defaultProps = {
+  favorite: false,
+};
 CardsFavorite.propTypes = {
   id: PropTypes.number, 
   make: PropTypes.string,

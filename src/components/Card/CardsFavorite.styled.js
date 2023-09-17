@@ -24,6 +24,8 @@ width: 274px;
 
 export const SubTitle = styled.span`
 color: ${colors.accentColor};
+margin-left: 5px;
+margin-right: 5px;
 `
 
 export const Text = styled.p`

@@ -2,7 +2,9 @@
 
 
 import styled from '@emotion/styled';
-
+// import { useState } from 'react';
+// import CardList from '../components/CardList/CardList';
+import TitlePage from '../components/TitlePage/TitlePage';
 export const Page = styled.div`
   position: relative;
   // background: #0a0a11;
@@ -30,11 +32,28 @@ export const Container = styled.div`
 `;
 
 const FavoritePage = () => {
-  
+  //  const [favoriteCars, setFavoriteCars] = useState([]);
+
+  // useEffect(() => {
+  //   instance
+  //     .get('api/favorite')
+  //     .then(res => {
+  //       const data = res.data;
+  //      setFavoriteCars(data.hits);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching cars:', error);
+  //     });
+  // }, []);
+  // console.log(`page ${favoriteCars}`);
   return (
-    <>
-      <h2>FavoritePage</h2>
-   
+     <>
+        <Page>
+        <Container>
+             <TitlePage titlePage="Favorite cars"/>
+            {/* <CardList items={favoriteCars} /> */}
+        </Container>
+      </Page>
     </>
   );
 };

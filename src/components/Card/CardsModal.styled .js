@@ -9,10 +9,12 @@ export const Wrapper = styled.div`
 
 export const SubTitle = styled.span`
 color: ${colors.accentColor};
+margin-left: 5px;
+margin-right: 5px;
 `
 export const About = styled.p`
 margin-top: 14px;
-margin-bottom: 24px;
+/* margin-bottom: 24px; */
 font-size: 14px;
 line-height: 20px;
 `
@@ -41,6 +43,7 @@ font-weight: 600;
 font-size: 14px;
 line-height: 20px;
 margin-bottom: 8px;
+margin-top: 24px;
 `
 export const CardWrapper = styled.div`
 position: relative;
@@ -75,8 +78,9 @@ export const Favorite = styled.img`
 `;
 
 export const Conditions = styled.div`
-margin-top: 24px;
+
 margin-bottom: 17px;
+display: flex;
 `
 export const ConditionsType = styled.div`
 display: flex;

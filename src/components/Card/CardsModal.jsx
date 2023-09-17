@@ -38,7 +38,7 @@ const CardsModal = ({id, make, model, type, year, img, address, mileage,  descri
       </CardWrapper>
       <Info>
         <Title>{make}
-          <SubTitle>{model}</SubTitle>  ,
+          <SubTitle>{model},</SubTitle>
           {year}
         </Title>
       </Info>
@@ -67,9 +67,9 @@ const CardsModal = ({id, make, model, type, year, img, address, mileage,  descri
           <Text>{functionalitiesText[2]}</Text>
         </Description>
       </Functionality>
-      <Conditions>
+      
         <SecondTitle>Rental Conditions:</SecondTitle>
-
+<Conditions>
         {/* <>
            {ConditionsArray.map((condition, index) => (
         <ConditionsType key={index}>
@@ -77,8 +77,8 @@ const CardsModal = ({id, make, model, type, year, img, address, mileage,  descri
         </ConditionsType>
       ))}
         </> */}
-        <ConditionsType>Mileage:{mileage}</ConditionsType>
-        <ConditionsType>Price:{ rentalPrice}</ConditionsType>
+        <ConditionsType>Mileage:<SubTitle>{mileage}</SubTitle></ConditionsType>
+        <ConditionsType>Price:<SubTitle>{ rentalPrice}</SubTitle></ConditionsType>
       </Conditions>
       <ButtonSee>Rental car</ButtonSee>
     </Wrapper>
@@ -104,5 +104,5 @@ functionalities: PropTypes.arrayOf(PropTypes.string),
   rentalConditions: PropTypes.string,
   description: PropTypes.string,
   photoLink: PropTypes.string,
-  engineSize: PropTypes.number,
+  engineSize: PropTypes.string,
 };
