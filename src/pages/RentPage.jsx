@@ -46,7 +46,7 @@ const RentPage = () => {
 useEffect(() => {
     const filteredCars = carsData.filter((car) => {
       const isModelMatch =
-        make === "Select model" || car.make === make;
+        make === "Enter the text"||make === "Select model" || car.make === make;
 const numericRentalPrice = parseFloat(rentalPrice.replace(/\$|\s/g, ''));
 const isPriceMatch =
   rentalPrice === "To $" || parseFloat(car.rentalPrice.replace(/\$|\s/g, '')) <= numericRentalPrice;
@@ -64,7 +64,12 @@ const isPriceMatch =
   function parseMileageRange(range, carMileage) {
   const [from, to] = range.split('-').map((num) => parseInt(num.trim()));
   return carMileage >= from && carMileage <= to;
-}
+  }
+  useEffect(() => {
+  if (make === "Select model"&&make === "Enter the text" && rentalPrice === "To $" && filter === "") {
+    setFilteredCars(carsData);
+  }
+}, [make, rentalPrice, filter]);
 
     return (
       <>
