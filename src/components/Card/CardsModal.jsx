@@ -19,7 +19,6 @@ import {
 } from "./CardsModal.styled .js";
 // import ConditionsArray from "./ConditionsArray";
 
-
 const CardsModal = ({id, make, model, type, year, img, address, mileage,  description, fuelConsumption, engineSize, accessories, functionalities, rentalPrice }) => {
   const propsImg = Object.values({ img })[0];
   const addressText = address || "";

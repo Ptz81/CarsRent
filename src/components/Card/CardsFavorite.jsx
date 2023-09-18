@@ -1,4 +1,3 @@
-// import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { FaHeart } from "react-icons/fa"; 
 import styled from "@emotion/styled";
@@ -16,7 +15,6 @@ import {
   Box,
   SubTitle
 } from "./CardsFavorite.styled.js";
-// import { colors } from "../../styles/GlobalStyles";
 import Modal from "../LoadModal/Modal.jsx";
 import { useEffect, useState } from "react";
 import CardsModal from "./CardsModal";

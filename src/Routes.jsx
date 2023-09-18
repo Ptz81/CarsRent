@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import SharedLayout from "./components/SharedLayout/SharedLayout.jsx";
 const MainPage = lazy(() => import("./pages/MainPage.jsx"));
 const RentPage = lazy(() => import("./pages/RentPage.jsx"));
-// const CarPage = lazy(() => import("./pages/CarPage.jsx"));
 const FavoritePage = lazy(() => import("./pages/FavoritePage.jsx"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
 
@@ -24,12 +23,6 @@ const UserRoutes = () => {
                 <RentPage />
             }
                   />
-                   {/* <Route
-            path="/car/:carId"
-            element={
-                <CarPage />
-            }
-          /> */}
            <Route
             path="/favorite/:page"
             element={

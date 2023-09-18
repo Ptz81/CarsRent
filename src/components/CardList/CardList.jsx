@@ -6,8 +6,6 @@ import { List, ContainerBtnPagination } from './CardList.styled.js';
 import Pagination from '../../Pagination/Pagination.jsx';
 import ButtonPagination from '../../UI/ButtonPagination/ButtonPagination.jsx';
 
-
-
 const CardList = ({ items, onDel }) => {
   const [contentPerPage, setContentPerPage] = useState(8);
 
@@ -55,7 +53,6 @@ const CardList = ({ items, onDel }) => {
   return (
     <>
       <List>{elements}</List>
-
       <ContainerBtnPagination>
         <ButtonPagination
           prevPage={prevPage}

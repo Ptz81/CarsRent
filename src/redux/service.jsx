@@ -1,5 +1,5 @@
+import { createCars, deleteCar, fetchCars } from "./api";
 
-import { createCars, deleteCar, fetchCars } from "./api"
 const arrThunk = [createCars, deleteCar, fetchCars]
 export const thunkFunction = (type)=>arrThunk.map(el=>el[type])
 export const handlePending = (state) => {

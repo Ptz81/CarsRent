@@ -1,6 +1,3 @@
-// import CardsFavorite from "../components/Card/CardsFavorite.jsx";
-
-
 import styled from '@emotion/styled';
 // import { useState } from 'react';
 // import CardList from '../components/CardList/CardList';
@@ -9,7 +6,6 @@ import { useEffect, useState } from 'react';
 import CardsFavorite from '../components/Card/CardsFavorite';
 export const Page = styled.div`
   position: relative;
-  // background: #0a0a11;
   margin: 0 auto;
 `;
 
@@ -22,7 +18,6 @@ export const Container404 = styled.div`
   }
   @media screen and (min-width: 1440px) {
     margin: 105px 0 62px 130px;
-    
   }
 `;
 

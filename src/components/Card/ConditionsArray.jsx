@@ -1,8 +1,6 @@
-// import React from 'react';
 import PropTypes from 'prop-types';
 import { ConditionsType } from './CardsModal.styled ';
 // import { ConditionsType } from './CardsModal.styled';
-
 
 const ConditionsArray = ({ rentalConditions }) => {
   const conditionElements = rentalConditions.split('\n').map((phrase, index) => {
