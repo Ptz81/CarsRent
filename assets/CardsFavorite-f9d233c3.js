@@ -1,4 +1,4 @@
-import{n as i,c as n,P as t,j as e,r as d}from"./index-fdc6f4eb.js";import{b as H,M as W,C as K}from"./CardsModal-06825a1d.js";const R=i.h1`
+import{n as i,c as n,P as e,j as t,r as v}from"./index-986080ef.js";import{b as N,M as A,C as H}from"./CardsModal-8ddd1191.js";const W=i.h1`
 text-align: center;
   font-family: var(--main-font-family);
   font-size: 32px;
@@ -13,7 +13,7 @@ text-align: center;
   @media screen and (min-width: 1200px) {
     font-size: 64px;
   }
-`,U=({titlePage:o})=>e.jsx(R,{children:o});U.propTypes={titlePage:t.string};const q=i.div`
+`,K=({titlePage:o})=>t.jsx(W,{children:o});K.propTypes={titlePage:e.string};const R=i.div`
 width: 274px;
   /* flex-basis: 274px;  */
   display: flex;
@@ -32,11 +32,11 @@ width: 274px;
     flex-basis: calc((100% - 40px) /7);
     /* flex-basis: 274px; */
   }
-`,A=i.span`
+`,U=i.span`
 color: ${n.accentColor};
 margin-left: 5px;
 margin-right: 5px;
-`,r=i.p`
+`,s=i.p`
   color: ${n.subTitleColor};
   font-family: inherit;
   font-size: 10px;
@@ -48,18 +48,18 @@ margin-right: 5px;
     font-size: 12px;
     line-height: 18px;
   }
-`,G=i.img`
+`,q=i.img`
   background-position: center top;
   object-fit: cover;
   width: 274px;
   height: 268px;
   border-radius: 14px;
-`,J=i.div`
+`,G=i.div`
   margin-top: 14px;
   margin-bottom: 8px;
 display: flex;
 justify-content: space-between;
-`,x=i.div`
+`,b=i.div`
 position: relative;
 width: 274px;
 `;i.img`
@@ -72,7 +72,7 @@ width: 274px;
     stroke: ${n.hoverColor};
     fill:${n.hoverColor};
   }
-`;const j=i.div`
+`;const F=i.div`
   color: ${n.textMainColor};
   display: flex;
   margin-bottom: 4px;
@@ -85,7 +85,7 @@ width: 274px;
   @media screen and (min-width: 768px) {
     font-size: 16px;
   }
-`,N=i.div`
+`,Q=i.div`
   color: ${n.textMainColor};
   font-family: inherit;
   font-size: 16px;
@@ -93,7 +93,7 @@ width: 274px;
   font-weight: 500;
   line-height: 24px;
   /* margin-bottom: 8px; */
-`,Q=i.div`
+`,V=i.div`
   color: ${n.textMainColor};
   font-family: inherit;
   font-size: 16px;
@@ -108,10 +108,10 @@ width: 274px;
   } */
 
   /* margin-bottom: 8px; */
-`,V=i.div`
+`,X=i.div`
   width: auto;
  margin-top: 24px;
-`,X=i.p`
+`,Y=i.p`
   padding: 12px 40px;
   border-radius: 12px;
   background: ${n.accentColor};
@@ -149,7 +149,7 @@ width: 274px;
   &:focus {
     background: ${n.hoverColor};
   }
-`;const Y=i.div`
+`;const Z=i.div`
 background-position: center top;
 background-size: cover;
 height: 268px;
@@ -162,7 +162,7 @@ justify-content: space-around;
 @media screen and (min-width: 1440px) {
   height: 400px;
 } */
-`,C=i(H)`
+`,_=i(N)`
   cursor: pointer;
   position: absolute;
   top: 14px;
@@ -176,4 +176,4 @@ justify-content: space-around;
     fill: ${o=>o.favorite?"blue":"transparent"};
     stroke-opacity: 0.2;
   }
-`,Z=({id:o,make:h,year:f,address:g,rentalConditions:k,rentalCompany:T,type:m,model:l,accessories:$,mileage:z,description:E,fuelConsumption:M,engineSize:S,functionalities:L,rentalPrice:u,img:p})=>{const[s,a]=d.useState(!1),[v,P]=d.useState(!1),I=()=>{a(!s)},O=()=>{P(!v)},w=c=>{x.current&&!x.current.contains(c.target)&&a(!1)};d.useEffect(()=>{const c=D=>{D.key==="Escape"&&s&&a(!1)};return document.addEventListener("keydown",c),document.addEventListener("click",w),()=>{document.removeEventListener("keydown",c),document.removeEventListener("click",w)}},[s]);const b=Object.values({img:p})[0],y=(g||"").split(", "),B=y[y.length-2],F=($||"")[0];return e.jsxs(q,{children:[e.jsxs(x,{children:[!b||b===""?e.jsx(Y,{}):e.jsx(G,{src:p}),e.jsx(C,{size:32,onClick:O,favorite:v})]}),e.jsxs(J,{children:[e.jsxs(N,{children:[h,e.jsxs(A,{children:[" ",l,","]}),f]}),e.jsx(Q,{children:u})]}),e.jsxs(j,{children:[e.jsx(r,{children:B}),e.jsx(r,{children:"Ukraine"}),e.jsx(r,{children:T})]}),e.jsxs(j,{children:[e.jsx(r,{children:m}),e.jsx(r,{style:{whiteSpace:"nowrap",width:"100%",overflow:"hidden"},children:l}),e.jsx(r,{children:o}),e.jsx(r,{style:{whiteSpace:"nowrap",width:"100%",overflow:"hidden"},children:F})]}),e.jsx(V,{children:e.jsx(X,{onClick:I,children:"Learn more"})}),s&&e.jsx(W,{isOpen:s,closeModal:()=>a(!1),children:e.jsx(K,{id:o,make:h,model:l,year:f,type:m,rentalPrice:u,mileage:z,fuelConsumption:M,description:E,engineSize:S,functionalities:L,img:p,address:g,rentalConditions:k})})]})};C.defaultProps={favorite:!1};Z.propTypes={id:t.number,make:t.string,year:t.number,address:t.string,accessories:t.arrayOf(t.string),rentalCompany:t.string,rentalConditions:t.string,model:t.string,img:t.string,type:t.string,rentalPrice:t.string,CarThumb:t.string,mileage:t.number,description:t.string,fuelConsumption:t.string,engineSize:t.string,onDelete:t.func,photoLink:t.string,functionalities:t.arrayOf(t.string)};export{X as B,Z as C,U as T};
+`,ee=({id:o,make:d,year:x,address:h,rentalConditions:w,rentalCompany:y,type:f,model:c,accessories:j,mileage:C,description:k,fuelConsumption:T,engineSize:$,functionalities:z,rentalPrice:g,img:l})=>{const[a,p]=v.useState(!1),[m,M]=v.useState(!1),L=()=>{p(!a)},B=()=>{const r=JSON.parse(localStorage.getItem("favoriteCars"))||[];if(!r.some(u=>u.id===o)){if(m){const u=r.filter(J=>J.id!==o);localStorage.setItem("favoriteCars",JSON.stringify(u))}else r.push({id:o,make:d,year:x,address:h,rentalConditions:w,rentalCompany:y,type:f,model:c,accessories:j,mileage:C,description:k,fuelConsumption:T,engineSize:$,functionalities:z,rentalPrice:g,img:l}),localStorage.setItem("favoriteCars",JSON.stringify(r));M(!m)}},S=r=>{b.current&&!b.current.contains(r.target)&&p(!1)};v.useEffect(()=>{const r=E=>{E.key==="Escape"&&a&&p(!1)};return document.addEventListener("keydown",r),document.addEventListener("click",S),()=>{document.removeEventListener("keydown",r),document.removeEventListener("click",S)}},[a]);const I=Object.values({img:l})[0],O=(h||"").split(", "),P=O[O.length-2],D=(j||"")[0];return t.jsxs(R,{children:[t.jsxs(b,{children:[!I||I===""?t.jsx(Z,{}):t.jsx(q,{src:l}),t.jsx(_,{size:32,onClick:B,favorite:m})]}),t.jsxs(G,{children:[t.jsxs(Q,{children:[d,t.jsxs(U,{children:[" ",c,","]}),x]}),t.jsx(V,{children:g})]}),t.jsxs(F,{children:[t.jsx(s,{children:P}),t.jsx(s,{children:"Ukraine"}),t.jsx(s,{children:y})]}),t.jsxs(F,{children:[t.jsx(s,{children:f}),t.jsx(s,{style:{whiteSpace:"nowrap",width:"100%",overflow:"hidden"},children:c}),t.jsx(s,{children:o}),t.jsx(s,{style:{whiteSpace:"nowrap",width:"100%",overflow:"hidden"},children:D})]}),t.jsx(X,{children:t.jsx(Y,{onClick:L,children:"Learn more"})}),a&&t.jsx(A,{isOpen:a,closeModal:()=>p(!1),children:t.jsx(H,{id:o,make:d,model:c,year:x,type:f,rentalPrice:g,mileage:C,fuelConsumption:T,description:k,engineSize:$,functionalities:z,img:l,address:h,rentalConditions:w})})]})};ee.propTypes={id:e.number,make:e.string,year:e.number,address:e.string,accessories:e.arrayOf(e.string),rentalCompany:e.string,rentalConditions:e.string,model:e.string,favorite:e.bool,img:e.string,type:e.string,rentalPrice:e.string,CarThumb:e.string,mileage:e.number,description:e.string,fuelConsumption:e.string,engineSize:e.string,onDelete:e.func,photoLink:e.string,functionalities:e.arrayOf(e.string)};export{Y as B,ee as C,K as T};

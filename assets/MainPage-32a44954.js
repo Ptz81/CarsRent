@@ -1,4 +1,4 @@
-import{n as t,c as u,P as a,j as e,B as S,a as B,u as y,T as E,L,r as l}from"./index-fdc6f4eb.js";import{c as P}from"./advertsCars-8074c75d.js";import{M as T,C as R}from"./CardsModal-06825a1d.js";const m="/CarsRent/assets/MainPage-66e01da7.jpg",$=t.section`
+import{n as t,c as u,P as a,j as e,B as S,a as B,u as y,T as E,L,r as l}from"./index-986080ef.js";import{c as P}from"./advertsCars-8074c75d.js";import{M as T,C as R}from"./CardsModal-8ddd1191.js";const m="/CarsRent/assets/MainPage-66e01da7.jpg",$=t.section`
 position: relative;
   background-color: ${u.mainBgColor};
   min-height: 100%;
