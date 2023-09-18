@@ -1,4 +1,4 @@
-import{n as s,c as g,r as x,P as r,j as e,L as B}from"./index-527854dd.js";import{C as T,B as E,T as I}from"./CardsFavorite-c594f244.js";import{F as L,a as q,G as F}from"./CardsModal-b82ab099.js";import{c as w}from"./advertsCars-8074c75d.js";s.div`
+import{n as s,c as g,r as x,P as r,j as e,L as B}from"./index-fdc6f4eb.js";import{C as T,B as E,T as I}from"./CardsFavorite-8122f696.js";import{F as L,a as q,G as F}from"./CardsModal-06825a1d.js";import{c as w}from"./advertsCars-8074c75d.js";s.div`
     display: flex;
     max-width: 226px;
 `;const A=s.div`
@@ -8,6 +8,9 @@ import{n as s,c as g,r as x,P as r,j as e,L as B}from"./index-527854dd.js";impor
   margin: 0 auto;
 `,O=s.div`
   padding: 80px 20px 40px 20px;
+  max-width: 1500px;
+margin-right: auto;
+margin-left: auto;
   @media screen and (min-width: 768px) {
     /* padding: 140px 32px 60px 32px; */
   }
@@ -173,7 +176,7 @@ max-width: 335px;
   margin-top: 40px;
   margin-bottom: 40px;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 800px) {
     flex-direction: row;
     gap: 8px;
     margin-top: 60px;
@@ -185,10 +188,14 @@ max-width: 335px;
   }
 `;function H(t){return F({tag:"svg",attr:{viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},child:[{tag:"polyline",attr:{points:"6 9 12 15 18 9"}}]})(t)}function J(t){return F({tag:"svg",attr:{viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},child:[{tag:"polyline",attr:{points:"18 15 12 9 6 15"}}]})(t)}const K=s.div`
   position: relative;
-  width: 125px;
+  width:100%;
+   @media only screen and (min-width: 800px) {
+    width: 125px;
   &:first-of-type{
     width: 224px;
   }
+  }
+  
 `,Q=s.button`
   width: 100%;
   padding: 18px 24px;
