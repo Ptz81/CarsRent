@@ -49,6 +49,17 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
     
   };
 
+  //   if (!favorite) {
+  //     const favoriteCars = JSON.parse(localStorage.getItem("favoriteCars")) || [];
+  //     favoriteCars.push({ id, ...otherProps });
+  //     localStorage.setItem("favoriteCars", JSON.stringify(favoriteCars));
+  //   } else {
+  //     const favoriteCars = JSON.parse(localStorage.getItem("favoriteCars")) || [];
+  //     const updatedFavoriteCars = favoriteCars.filter((car) => car.id !== id);
+  //     localStorage.setItem("favoriteCars", JSON.stringify(updatedFavoriteCars));
+  //   }
+  // };
+
   const handleClickOutside = (event) => {
     if (CardWrapper.current && !CardWrapper.current.contains(event.target)) {
       setIsOpen(false);
@@ -107,9 +118,9 @@ const CardsFavorite = ({id, make, year, address, rentalCompany, type, model, acc
       </Description>
               <Description>
         <Text>{ type}</Text>
-        <Text style={{whiteSpace: "nowrap", width:"100px", overflow:'hidden'}}>{ model }</Text>
+        <Text style={{whiteSpace: "nowrap", width:"100%", overflow:'hidden'}}>{ model }</Text>
         <Text>{ id }</Text>
-        <Text style={{whiteSpace: "nowrap", width:"100px", overflow:'hidden'}}>{ advantages }</Text>
+        <Text style={{whiteSpace: "nowrap", width:"100%", overflow:'hidden'}}>{ advantages }</Text>
         </Description>
       
       <ListBtn>

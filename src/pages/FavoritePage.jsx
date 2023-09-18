@@ -5,6 +5,8 @@ import styled from '@emotion/styled';
 // import { useState } from 'react';
 // import CardList from '../components/CardList/CardList';
 import TitlePage from '../components/TitlePage/TitlePage';
+import { useEffect, useState } from 'react';
+import CardsFavorite from '../components/Card/CardsFavorite';
 export const Page = styled.div`
   position: relative;
   // background: #0a0a11;
@@ -32,8 +34,11 @@ export const Container = styled.div`
 `;
 
 const FavoritePage = () => {
-  //  const [favoriteCars, setFavoriteCars] = useState([]);
-
+   const [favoriteCars, setFavoriteCars] = useState([]);
+ useEffect(() => {
+    const favoriteCarsFromLocalStorage = JSON.parse(localStorage.getItem('favoriteCars')) || [];
+    setFavoriteCars(favoriteCarsFromLocalStorage);
+  }, []);
   // useEffect(() => {
   //   instance
   //     .get('api/favorite')
@@ -51,7 +56,9 @@ const FavoritePage = () => {
         <Page>
         <Container>
              <TitlePage titlePage="Favorite cars"/>
-            {/* <CardList items={favoriteCars} /> */}
+              {favoriteCars.map((car) => (
+            <CardsFavorite key={car.id} {...car} />
+          ))}
         </Container>
       </Page>
     </>

@@ -27,7 +27,9 @@ const NavMenu = ({
  const uniqueRentalPrices = Array.from(
   new Set(carsData.map(item => item.rentalPrice))
 );
- 
+  const uniqueMileage = Array.from(
+  new Set(carsData.map(item => item.mileage))
+);
   
   return (
     <FilterContainer>
@@ -46,7 +48,7 @@ const NavMenu = ({
       />
       <div style={{ display: 'flex', alignItems: 'center', marginLeft: "18px" }}>
         <InputFilter
-          value={mileage}
+          value={uniqueMileage}
           filter={filter}
           inputStyle="active"
           onFilterChange={onFilterChange}
