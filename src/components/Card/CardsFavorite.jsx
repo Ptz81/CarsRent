@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { FaHeart } from "react-icons/fa"; 
 import styled from "@emotion/styled";
+
 import {
   Wrapper,
   Img,
@@ -25,45 +26,47 @@ const HeartIcon = styled(FaHeart)`
   position: absolute;
   top: 14px;
   right: 14px;
-  fill: ${(props) => (props.favorite ? 'blue' : 'transparent')};
-  stroke: white;
+  fill: transparent;
+   stroke: transparent;
   stroke-width: 30px;
   &:hover,
   &:focus,
   &:active {
-    fill: ${(props) => (props.favorite ? 'blue' : 'transparent')};
+    fill: blue;
     stroke-opacity: 0.2;
+     stroke: transparent; 
   }
 `;
-const CardsFavorite = ({id, make, year, address, rentalConditions, rentalCompany, type, model, accessories, mileage,  description, fuelConsumption, engineSize, functionalities, rentalPrice, img }) => {
+const CardsFavorite = ({ onRemove, id, make, year, address, rentalConditions, rentalCompany, type, model, accessories, mileage,  description, fuelConsumption, engineSize, functionalities, rentalPrice, img }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
-    const handleToggle = () => {
+
+  useEffect(() => {
+    const favoriteCars = JSON.parse(localStorage.getItem("favoriteCars")) || [];
+    const isAlreadyFavorite = favoriteCars.some((car) => car.id === id);
+    setIsFavorite(isAlreadyFavorite);
+  }, [id]);
+
+  const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
-    const toggleFavorite = () => {
+  const toggleFavorite = () => {
     const favoriteCars = JSON.parse(localStorage.getItem("favoriteCars")) || [];
-
     const isAlreadyFavorite = favoriteCars.some((car) => car.id === id);
 
-  if (isAlreadyFavorite) {
-    return;
-  }
-      
-      
-    if (isFavorite) {
+    if (isAlreadyFavorite) {
       const updatedFavoriteCars = favoriteCars.filter((car) => car.id !== id);
       localStorage.setItem("favoriteCars", JSON.stringify(updatedFavoriteCars));
     } else {
-
-      favoriteCars.push({ id, make, year, address, rentalConditions, rentalCompany, type, model, accessories, mileage,  description, fuelConsumption, engineSize, functionalities, rentalPrice, img});
+      favoriteCars.push({ id, make, year, address, rentalConditions, rentalCompany, type, model, accessories, mileage, description, fuelConsumption, engineSize, functionalities, rentalPrice, img });
       localStorage.setItem("favoriteCars", JSON.stringify(favoriteCars));
     }
 
-    setIsFavorite(!isFavorite);
-    };
+    setIsFavorite(!isAlreadyFavorite);
+  };
 
+  
   const handleClickOutside = (event) => {
     if (CardWrapper.current && !CardWrapper.current.contains(event.target)) {
       setIsOpen(false);
@@ -93,18 +96,17 @@ const CardsFavorite = ({id, make, year, address, rentalConditions, rentalCompany
   const advantages = accessoriesText[0];
   
   return (
-    <Wrapper>
+    <Wrapper onClick={toggleFavorite}>
       <CardWrapper>
           {!propsImg || propsImg === '' ? (
         <Box/>
       ) : (
-        <Img src={img}/>
+        <Img src={img} />
       )}
         
       <HeartIcon
           size={32}
-          onClick={toggleFavorite}
-           favorite={isFavorite}
+           style={{ fill: isFavorite ? 'blue' : 'transparent' }}
         />
 
       </CardWrapper>
@@ -139,6 +141,7 @@ const CardsFavorite = ({id, make, year, address, rentalConditions, rentalCompany
             model={model}
             year={year}
             type={type}
+            onRemove={onRemove}
             rentalPrice={rentalPrice}
             mileage={mileage}
             fuelConsumption={fuelConsumption}
@@ -161,6 +164,7 @@ export default CardsFavorite;
 // };
 CardsFavorite.propTypes = {
   id: PropTypes.number, 
+  onRemove: PropTypes.func,
   make: PropTypes.string,
   year: PropTypes.number,
   address: PropTypes.string,

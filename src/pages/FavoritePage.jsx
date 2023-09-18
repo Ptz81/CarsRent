@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import TitlePage from '../components/TitlePage/TitlePage.jsx';
 import { useEffect, useState } from 'react';
 import CardsFavorite from '../components/Card/CardsFavorite.jsx';
+
 export const Page = styled.div`
   position: relative;
   margin: 0 auto;
@@ -45,10 +46,18 @@ export const Container = styled.div`
 
 const FavoritePage = () => {
   const [favoriteCars, setFavoriteCars] = useState([]);
+  const [updateTrigger, setUpdateTrigger] = useState(false);
+
 useEffect(() => {
     const storedFavoriteCars = JSON.parse(localStorage.getItem("favoriteCars")) || [];
     setFavoriteCars(storedFavoriteCars);
-  }, []);
+  }, [updateTrigger]);
+
+  const handleRemoveFavorite = (id) => {
+    const updatedFavoriteCars = favoriteCars.filter((card) => card.id !== id);
+    localStorage.setItem("favoriteCars", JSON.stringify(updatedFavoriteCars));
+    setUpdateTrigger(!updateTrigger);
+  };
 
   // useEffect(() => {
   //   instance
@@ -69,7 +78,9 @@ useEffect(() => {
           <TitlePage titlePage="Favorite cars" />
           <List>
              {favoriteCars.map((card) => (
-              <CardsFavorite key={card.id} {...card} />
+               <CardsFavorite key={card.id} {...card} 
+                 onRemove={handleRemoveFavorite}
+              />
             ))}
           </List>
              
