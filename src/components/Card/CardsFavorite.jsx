@@ -42,21 +42,27 @@ const CardsFavorite = ({id, make, year, address, rentalConditions, rentalCompany
     setIsOpen(!isOpen);
   };
 
-  const toggleFavorite = () => {
-    setIsFavorite(!isFavorite);
-    
-  };
+    const toggleFavorite = () => {
+    const favoriteCars = JSON.parse(localStorage.getItem("favoriteCars")) || [];
 
-  //   if (!favorite) {
-  //     const favoriteCars = JSON.parse(localStorage.getItem("favoriteCars")) || [];
-  //     favoriteCars.push({ id, ...otherProps });
-  //     localStorage.setItem("favoriteCars", JSON.stringify(favoriteCars));
-  //   } else {
-  //     const favoriteCars = JSON.parse(localStorage.getItem("favoriteCars")) || [];
-  //     const updatedFavoriteCars = favoriteCars.filter((car) => car.id !== id);
-  //     localStorage.setItem("favoriteCars", JSON.stringify(updatedFavoriteCars));
-  //   }
-  // };
+    const isAlreadyFavorite = favoriteCars.some((car) => car.id === id);
+
+  if (isAlreadyFavorite) {
+    return;
+  }
+      
+      
+    if (isFavorite) {
+      const updatedFavoriteCars = favoriteCars.filter((car) => car.id !== id);
+      localStorage.setItem("favoriteCars", JSON.stringify(updatedFavoriteCars));
+    } else {
+
+      favoriteCars.push({ id, make, year, address, rentalConditions, rentalCompany, type, model, accessories, mileage,  description, fuelConsumption, engineSize, functionalities, rentalPrice, img});
+      localStorage.setItem("favoriteCars", JSON.stringify(favoriteCars));
+    }
+
+    setIsFavorite(!isFavorite);
+    };
 
   const handleClickOutside = (event) => {
     if (CardWrapper.current && !CardWrapper.current.contains(event.target)) {
@@ -150,9 +156,9 @@ const CardsFavorite = ({id, make, year, address, rentalConditions, rentalCompany
 };
 
 export default CardsFavorite;
-HeartIcon.defaultProps = {
-  favorite: false,
-};
+// HeartIcon.defaultProps = {
+//   favorite: "false",
+// };
 CardsFavorite.propTypes = {
   id: PropTypes.number, 
   make: PropTypes.string,
@@ -162,6 +168,7 @@ CardsFavorite.propTypes = {
   rentalCompany: PropTypes.string,
   rentalConditions: PropTypes.string,
   model: PropTypes.string,
+  favorite: PropTypes.bool,
   img: PropTypes.string,
   type: PropTypes.string, 
   rentalPrice: PropTypes.string,
