@@ -19,13 +19,14 @@ import {
 } from "./CardsModal.styled .js";
 // import ConditionsArray from "./ConditionsArray";
 
-const CardsModal = ({id, make, model, type, year, img, address, mileage,  description, fuelConsumption, engineSize, accessories, functionalities, rentalPrice }) => {
+const CardsModal = ({id, make, model, type, year, rentalConditions,img, address, mileage,  description, fuelConsumption, engineSize, accessories, functionalities, rentalPrice }) => {
   const propsImg = Object.values({ img })[0];
   const addressText = address || "";
   const addressParts = addressText.split(', ');
   const city = addressParts[addressParts.length - 2];
   const accessoriesText = accessories || "";
   const functionalitiesText = functionalities || "";
+  const rentalConditionsSentences = rentalConditions.split("\n");
   return (
     <Wrapper>
       <CardWrapper>
@@ -69,13 +70,12 @@ const CardsModal = ({id, make, model, type, year, img, address, mileage,  descri
       
         <SecondTitle>Rental Conditions:</SecondTitle>
 <Conditions>
-        {/* <>
-           {ConditionsArray.map((condition, index) => (
-        <ConditionsType key={index}>
-          {condition}
-        </ConditionsType>
-      ))}
-        </> */}
+        <>
+           {rentalConditionsSentences.map((sentence, index) => (
+          <ConditionsType key={index}>{sentence}</ConditionsType>
+        ))}
+        </>
+        <ConditionsType>{rentalConditions}</ConditionsType>
         <ConditionsType>Mileage:<SubTitle>{mileage}</SubTitle></ConditionsType>
         <ConditionsType>Price:<SubTitle>{ rentalPrice}</SubTitle></ConditionsType>
       </Conditions>

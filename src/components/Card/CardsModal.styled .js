@@ -78,19 +78,25 @@ export const Favorite = styled.img`
 `;
 
 export const Conditions = styled.div`
-
+display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 margin-bottom: 17px;
-display: flex;
+
 `
-export const ConditionsType = styled.div`
-display: flex;
-margin: 10px;
-justify-content: space-between;
+export const ConditionsType = styled.p`
 border-radius: 35px;
 background-color: ${colors.disabled};
 color: ${colors.textMainColor};
 font-size: 12px;
 line-height: 18px;
+ margin: 0;
+  padding: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block; /* Змінив display на inline-block */
+  margin-right: 8px; 
 `
 export const Description = styled.div`
   color: ${colors.textMainColor};
