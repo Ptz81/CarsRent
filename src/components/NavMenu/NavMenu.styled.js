@@ -10,7 +10,7 @@ export const FilterContainer = styled.div`
   margin-top: 40px;
   margin-bottom: 40px;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 800px) {
     flex-direction: row;
     gap: 8px;
     margin-top: 60px;

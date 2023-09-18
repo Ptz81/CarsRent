@@ -6,10 +6,14 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 const CustomSelect = styled.div`
   position: relative;
-  width: 125px;
+  width:100%;
+   @media only screen and (min-width: 800px) {
+    width: 125px;
   &:first-of-type{
     width: 224px;
   }
+  }
+  
 `;
 
 const SelectButton = styled.button`

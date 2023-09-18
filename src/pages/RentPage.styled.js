@@ -15,6 +15,9 @@ export const Page = styled.div`
 `;
 export const Container = styled.div`
   padding: 80px 20px 40px 20px;
+  max-width: 1500px;
+margin-right: auto;
+margin-left: auto;
   @media screen and (min-width: 768px) {
     /* padding: 140px 32px 60px 32px; */
   }
