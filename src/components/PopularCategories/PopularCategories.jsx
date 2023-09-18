@@ -238,6 +238,7 @@ const PopularCategories = ({ categoryCar }) => {
             functionalities={selectedCar.functionalities}
             img={selectedCar.img}
             address={selectedCar.address}
+            rentalConditions={selectedCar.rentalConditions}
           />
         </Modal>
       )}

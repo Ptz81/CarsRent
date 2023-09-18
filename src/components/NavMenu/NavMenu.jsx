@@ -48,12 +48,13 @@ const NavMenu = ({
       />
       <div style={{ display: 'flex', alignItems: 'center', marginLeft: "18px" }}>
         <InputFilter
-          value={uniqueMileage}
+          options={[...uniqueMileage]}
+          value={mileage}
           filter={filter}
           inputStyle="active"
           onFilterChange={onFilterChange}
           inputPrefix="From"
-          name="from Filter"
+          name="fromFilter"
         />
         <InputFilter
           value={mileage}
@@ -75,7 +76,7 @@ export default NavMenu;
 NavMenu.propTypes = {
   make: PropTypes.string,
   rentalPrice: PropTypes.string,
-  mileage: PropTypes.number,
+  mileage: PropTypes.string,
   onModelChange: PropTypes.func.isRequired,
   onPriceChange: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
@@ -124,56 +125,6 @@ NavMenu.propTypes = {
 //   setFilteredCars(newFilteredCars);
 // };
 
-//   const handleFilterChange = (e) => {
-//     // const { name, value } = e.target.value;
-//   // if (name === "fromFilter") {
-//   //   setFromFilter(value);
-//   // } else if (name === "toFilter") {
-//   //   setToFilter(value);
-//   //   }
-//     onFilterChange(e.target.value);
-//   filterCars(e.target.value, make, rentalPrice);
-// };
-
-// const handleCarChange = (selectedCar) => {
-//   onCategoryChange(selectedCar);
-//   filterCars(filter, selectedCar, rentalPrice);
-// };
-
-// const handlePriceChange = (selectedPrice) => {
-//   onPriceChange(selectedPrice);
-//   filterCars(filter, make, selectedPrice);
-// };
-//   const handleInputChange = (e) => {
-//   const { name, value } = e.target;
-//   onFilterChange(name, value);
-// };
-
-
-  
-
-
-
-// import { useState, useEffect } from 'react';
-// import Filter from "../Filter/Filter.jsx";
-// import { FilterContainer } from "./NavMenu.styled.js";
-// import PropTypes from "prop-types";
-// import CustomSelectComponent from "../../UI/Select/Select.jsx";
-// import carsData from '../../data/DB/advertsCars.json';
-// const NavMenu = ({ filter, make, rentalPrice, onFilterChange, onCategoryChange, onPriceChange, setFilteredCars }) => {
-//   // Логіка фільтрації та вибору даних тут
-
-//   const handleMakeChange = (selectedMake) => {
-//     // Фільтрація за маркою (make) автомобіля
-//     const filteredCarsByMake = carsData.filter(car => car.make === selectedMake);
-//     setFilteredCars(filteredCarsByMake);
-//   };
-
-//   const handlePriceChange = (selectedPrice) => {
-//     // Фільтрація за ціною оренди (rentalPrice)
-//     const filteredCarsByPrice = carsData.filter(car => car.rentalPrice <= selectedPrice);
-//     setFilteredCars(filteredCarsByPrice);
-//   };
 
 //  const handleMileageChange = (fromMileage, toMileage) => {
 //     // Фільтрація за пробігом (Mileage)
@@ -189,38 +140,3 @@ NavMenu.propTypes = {
 //     });
 //     setFilteredCars(filteredCarsByMileage);
 //   };
-
-//   return (
-//     <FilterContainer>
-//       <CustomSelectComponent
-//         options={make}
-//         placeholder="Select model"
-//         onChange={handleMakeChange}
-//       />
-//       <CustomSelectComponent
-//         options={rentalPrice}
-//         placeholder="To $"
-//         onChange={handlePriceChange}
-//       />
-//       <div style={{ display: 'flex', alignItems: 'center' }}>
-//          <Filter
-
-//       />
-//         <Filter  
-
-//         />
-//       </div>
-//     </FilterContainer>
-//   );
-// };
-
-// export default NavMenu;
-// NavMenu.propTypes = {
-//   make: PropTypes.string,
-//   rentalPrice: PropTypes.string,
-//   onCategoryChange: PropTypes.func.isRequired,
-//   onPriceChange: PropTypes.func.isRequired,
-//   filter: PropTypes.string.isRequired,
-//   onFilterChange: PropTypes.func.isRequired,
-//   setFilteredCars: PropTypes.func.isRequired,
-// };

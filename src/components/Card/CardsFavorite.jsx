@@ -37,13 +37,13 @@ const HeartIcon = styled(FaHeart)`
 `;
 const CardsFavorite = ({id, make, year, address, rentalConditions, rentalCompany, type, model, accessories, mileage,  description, fuelConsumption, engineSize, functionalities, rentalPrice, img }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [favorite, setFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
     const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
   const toggleFavorite = () => {
-    setFavorite(!favorite);
+    setIsFavorite(!isFavorite);
     
   };
 
@@ -98,7 +98,7 @@ const CardsFavorite = ({id, make, year, address, rentalConditions, rentalCompany
       <HeartIcon
           size={32}
           onClick={toggleFavorite}
-           favorite={favorite}
+           favorite={isFavorite}
         />
 
       </CardWrapper>
