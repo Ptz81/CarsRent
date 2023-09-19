@@ -4,10 +4,13 @@ import styled from '@emotion/styled';
 import TitlePage from '../components/TitlePage/TitlePage.jsx';
 import { useEffect, useState } from 'react';
 import CardsFavorite from '../components/Card/CardsFavorite.jsx';
+// import { colors } from '../styles/GlobalStyles.js';
+import NotFoundMobile from '../assets/notfoundpage.png'
 
 export const Page = styled.div`
   position: relative;
   margin: 0 auto;
+height: 100vh;
 `;
 
 export const Container404 = styled.div`
@@ -42,7 +45,15 @@ export const Container = styled.div`
   }
 `;
 
-
+export const Warning = styled.div`
+ display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+  height: 100vh;
+font-size: 30px;
+text-transform: uppercase;
+`
 
 const FavoritePage = () => {
   const [favoriteCars, setFavoriteCars] = useState([]);
@@ -76,14 +87,21 @@ useEffect(() => {
         <Page>
         <Container>
           <TitlePage titlePage="Favorite cars" />
+               {favoriteCars.length > 0 ? (
           <List>
-             {favoriteCars.map((card) => (
-               <CardsFavorite key={card.id} {...card} 
-                 onRemove={handleRemoveFavorite}
-              />
+            {favoriteCars.map((card) => (
+              <CardsFavorite key={card.id} {...card} onRemove={handleRemoveFavorite} />
             ))}
           </List>
+          ) : (
+              <Warning> 
+                <img width="200px" src={ NotFoundMobile} />
+                <p>
+                  No favorite cars available.
+               </p>  
+              </Warning>
              
+        )}
         </Container>
       </Page>
     </>

@@ -55,9 +55,10 @@ box-shadow: 0px 4px 36px 0px rgba(247,247,251,0.8);
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   z-index: 100;
   scrollbar-width: 8px;
-  scrollbar-color: ${colors.disabled} transparent;
+  scrollbar-color: ${colors.grayColor} transparent;
   ::-webkit-scrollbar {
     width: 8px;
+    margin-right: 8px;
   }
   ::-webkit-scrollbar-thumb {
     background-color: ${colors.disabled};

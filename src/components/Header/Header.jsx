@@ -2,10 +2,28 @@ import { useState, useEffect } from "react";
 import Logo from "../Logo/Logo.jsx";
 import Navigation from "../Navigation/Navigation.jsx";
 import MobileMenu from "../MobileMenu/MobileMenu.jsx";
-import { StyledHeader } from "./Header.styled";
+import { HeaderContainer, StyledHeader } from "./Header.styled";
 
 const Header = () => {
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        <StyledHeader style={{ backgroundColor: "rgba(255, 255, 255, 0.5)" }}/>;
+      } else {
+        <StyledHeader style={{ backgroundColor: "rgb(255, 255, 255)" }}/>;
+      }
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,6 +44,9 @@ const Header = () => {
   }, []);
 
   return (
+    <HeaderContainer>
+
+
     <StyledHeader>
       <Logo />
       {isMobileMenuVisible ? (
@@ -37,7 +58,8 @@ const Header = () => {
           <Navigation />
         </>
       )}
-    </StyledHeader>
+      </StyledHeader>
+          </HeaderContainer>
   );
 };
 

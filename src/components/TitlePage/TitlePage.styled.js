@@ -9,7 +9,7 @@ text-align: center;
   font-weight: 600;
   line-height: 0.9;
   color: ${colors.textMainColor};
-
+margin-top: 40px;
 
   @media screen and (min-width: 768px) {
     font-size: 56px;
