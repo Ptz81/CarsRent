@@ -1,11 +1,11 @@
-import{n,c as i,P as e,j as t,r as h}from"./index-483daed2.js";import{b as A,M as H,C as R}from"./CardsModal-ce71f015.js";const W=n.h1`
+import{n,c as i,P as e,j as t,r as h}from"./index-e9e17586.js";import{b as A,M as H,C as R}from"./CardsModal-9ac44c2f.js";const W=n.h1`
 text-align: center;
   font-family: var(--main-font-family);
   font-size: 32px;
   font-weight: 600;
   line-height: 0.9;
   color: ${i.textMainColor};
-
+margin-top: 40px;
 
   @media screen and (min-width: 768px) {
     font-size: 56px;

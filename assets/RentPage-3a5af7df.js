@@ -1,4 +1,4 @@
-import{n as s,c as g,r as x,P as r,j as e,L as B}from"./index-483daed2.js";import{C as T,B as E,T as I}from"./CardsFavorite-2f422e55.js";import{F as L,a as q,G as F}from"./CardsModal-ce71f015.js";import{c as w}from"./advertsCars-8074c75d.js";s.div`
+import{n as s,c as g,r as x,P as r,j as e,L as B}from"./index-e9e17586.js";import{C as T,B as E,T as I}from"./CardsFavorite-6f5e6d81.js";import{F as L,a as q,G as F}from"./CardsModal-9ac44c2f.js";import{c as w}from"./advertsCars-8074c75d.js";s.div`
     display: flex;
     max-width: 226px;
 `;const A=s.div`
@@ -233,9 +233,10 @@ box-shadow: 0px 4px 36px 0px rgba(247,247,251,0.8);
   display: ${({isOpen:t})=>t?"block":"none"};
   z-index: 100;
   scrollbar-width: 8px;
-  scrollbar-color: ${g.disabled} transparent;
+  scrollbar-color: ${g.grayColor} transparent;
   ::-webkit-scrollbar {
     width: 8px;
+    margin-right: 8px;
   }
   ::-webkit-scrollbar-thumb {
     background-color: ${g.disabled};
