@@ -38,10 +38,15 @@ const Modal = ({ isOpen, closeModal, children}) => {
   const handleModalClick = (event) => {
     event.stopPropagation();
   };
+   const handleBackdropClick = e => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
   return (
     <>
       {isOpen && (
-        <ModalOverlay>
+        <ModalOverlay onClick={handleBackdropClick}>
           <ModalContent className="ModalContent" onClick={handleModalClick}>
             <CloseButton onClick={closeModal}>
               <FaTimes size={24} />
