@@ -1,4 +1,4 @@
-import{n as o,c as t,j as n}from"./index-23e45bc2.js";import{N as i}from"./notfoundpage-fcb94ca6.js";const e=o.div`
+import{n as o,c as t,j as n}from"./index-66ee0748.js";import{N as i}from"./notfoundpage-fcb94ca6.js";const e=o.div`
     position: relative;
     max-width: 465px;
     display: flex;
