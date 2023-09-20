@@ -17,7 +17,6 @@ import {
   Conditions,
   ConditionsType,
 } from "./CardsModal.styled .js";
-// import ConditionsArray from "./ConditionsArray";
 
 const CardsModal = ({id, make, model, type, year, rentalConditions,img, address, mileage,  description, fuelConsumption, engineSize, accessories, functionalities, rentalPrice }) => {
   const propsImg = Object.values({ img })[0];
@@ -27,13 +26,17 @@ const CardsModal = ({id, make, model, type, year, rentalConditions,img, address,
   const accessoriesText = accessories || "";
   const functionalitiesText = functionalities || "";
   const rentalConditionsSentences = rentalConditions.split("\n");
+   const handlePhoneCall = () => {
+    const phoneNumber = " +3802222222"; 
+    window.location.href = `tel:${phoneNumber}`;
+  };
   return (
     <Wrapper>
       <CardWrapper>
        {!propsImg || propsImg === '' ? (
         <Box/>
       ) : (
-        <Img src={img}/>
+        <Img src={img} alt="car photo"/>
       )}
       </CardWrapper>
       <Info>
@@ -79,7 +82,7 @@ const CardsModal = ({id, make, model, type, year, rentalConditions,img, address,
         <ConditionsType>Mileage:<SubTitle>{mileage}</SubTitle></ConditionsType>
         <ConditionsType>Price:<SubTitle>{ rentalPrice}</SubTitle></ConditionsType>
       </Conditions>
-      <ButtonSee>Rental car</ButtonSee>
+      <ButtonSee onClick={handlePhoneCall}>Rental car</ButtonSee>
     </Wrapper>
   );
 };

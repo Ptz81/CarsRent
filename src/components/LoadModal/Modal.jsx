@@ -49,7 +49,7 @@ const Modal = ({ isOpen, closeModal, children}) => {
         <ModalOverlay onClick={handleBackdropClick}>
           <ModalContent className="ModalContent" onClick={handleModalClick}>
             <CloseButton onClick={closeModal}>
-              <FaTimes size={24} />
+              <FaTimes size={18} />
             </CloseButton>
             {children}
           </ModalContent>

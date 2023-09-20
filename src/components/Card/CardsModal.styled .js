@@ -132,7 +132,7 @@ export const ButtonSee = styled.p`
   text-align: center;
  max-width: 168px;
  margin-top: 24px;
-
+cursor: pointer;
   @media screen and (min-width: 768px) {
     padding: 18px 44px;
     font-size: 16px;

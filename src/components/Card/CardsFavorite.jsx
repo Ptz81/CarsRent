@@ -27,14 +27,14 @@ const HeartIcon = styled(FaHeart)`
   top: 14px;
   right: 14px;
   fill: transparent;
-   stroke: transparent;
+   stroke: #fff;
   stroke-width: 30px;
   &:hover,
   &:focus,
   &:active {
     fill: blue;
     stroke-opacity: 0.2;
-     stroke: transparent; 
+     stroke: blue; 
   }
 `;
 const CardsFavorite = ({ onRemove, id, make, year, address, rentalConditions, rentalCompany, type, model, accessories, mileage,  description, fuelConsumption, engineSize, functionalities, rentalPrice, img }) => {
@@ -101,7 +101,7 @@ const CardsFavorite = ({ onRemove, id, make, year, address, rentalConditions, re
           {!propsImg || propsImg === '' ? (
         <Box/>
       ) : (
-        <Img src={img} />
+        <Img src={img} alt="car photo"/>
       )}
         
       <HeartIcon

@@ -81,7 +81,8 @@ const InputFilter = ({ value, onFilterChange, inputStyle, inputPrefix }) => {
         name="text"
         placeholder="Enter the text"
         value={value}
-        onChange={(e) => onFilterChange(e.target.value)} // Оновлено обробник подій
+        onChange={(e) => onFilterChange(e.target.value.replace(/\D/g, "")
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ","))} 
       />
     </div>
   );

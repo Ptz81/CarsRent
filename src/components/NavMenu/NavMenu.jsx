@@ -23,8 +23,8 @@ const NavMenu = ({
 
   const handleSearchClick = () => {
   
-  const startMilesInt = mileageFrom !== "" ? parseInt(mileageFrom) : null;
-  const endMilesInt = mileageTo !== "" ? parseInt(mileageTo) : null;
+  const startMilesInt = mileageFrom !== "" ? parseInt(mileageFrom.replace(/,/g, '')) : null;
+  const endMilesInt = mileageTo !== "" ? parseInt(mileageTo.replace(/,/g, '')) : null;
 
   if (startMilesInt !== null && Number.isNaN(startMilesInt) ||
       endMilesInt !== null && Number.isNaN(endMilesInt)) {
@@ -63,7 +63,7 @@ const NavMenu = ({
       <div style={{ display: 'flex', alignItems: 'center', marginLeft: "18px" }}>
        <InputFilter
   options={uniqueMileage.map(String)} 
-  value={mileageFrom}
+  value={mileageFrom.toLocaleString()}
   onFilterChange={(value) => setMileageFrom(value)} 
   inputStyle="active"
   inputPrefix="From"
@@ -71,7 +71,7 @@ const NavMenu = ({
 />
 <InputFilter
   options={uniqueMileage.map(String)} 
-  value={mileageTo}
+  value={mileageTo.toLocaleString()}
   onFilterChange={(value) => setMileageTo(value)} 
   inputStyle="secondary"
   inputPrefix="To"

@@ -115,6 +115,7 @@ export const Price = styled.div`
 export const ListBtn = styled.div`
   width: auto;
  margin-top: 24px;
+ cursor: pointer;
 `;
 export const ButtonSee = styled.p`
   padding: 12px 40px;
@@ -127,6 +128,7 @@ export const ButtonSee = styled.p`
   font-weight: 600;
   line-height: 18px;
   text-align: center;
+  cursor: pointer;
  
 
   @media screen and (min-width: 768px) {
