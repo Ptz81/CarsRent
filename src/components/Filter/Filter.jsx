@@ -65,32 +65,33 @@ left: 24px;
 z-index: 99;
 `
 
-const InputFilter = ({ filter, onFilterChange, inputStyle, inputPrefix }) => {
-    let InputComponent;
-   if (inputStyle === 'active') {
+const InputFilter = ({ value, onFilterChange, inputStyle, inputPrefix }) => {
+  let InputComponent;
+  if (inputStyle === 'active') {
     InputComponent = inputPrimary;
-  } else if(inputStyle === 'secondary') {
-    InputComponent = inputSecondary; 
+  } else if (inputStyle === 'secondary') {
+    InputComponent = inputSecondary;
   }
+
   return (
-    <div style={{ display: 'flex', alignItems: 'center', position:'relative' }}>
+    <div style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
       <Prefix>{inputPrefix}</Prefix>
       <InputComponent
         type="text"
         name="text"
         placeholder="Enter the text"
-        value={filter}
-        onChange={onFilterChange}
+        value={value}
+        onChange={(e) => onFilterChange(e.target.value)} // Оновлено обробник подій
       />
     </div>
   );
 };
 
+
 export default InputFilter;
 InputFilter.propTypes = {
-  filter: PropTypes.string.isRequired,
-  onFilterChange: PropTypes.func.isRequired,
-  onMileageChange: PropTypes.func,
+  value: PropTypes.string,
   inputStyle: PropTypes.string.isRequired,
   inputPrefix: PropTypes.string,
+  onFilterChange: PropTypes.func.isRequired,
 };

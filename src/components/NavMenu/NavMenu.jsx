@@ -7,82 +7,92 @@ import CustomSelectComponent from "../../UI/Select/Select.jsx";
 import carsData from '../../data/DB/advertsCars.json';
 import InputFilter from "../Filter/Filter.jsx";
 import { ButtonSee } from "../Card/CardsFavorite.styled.js";
-
+import { useState } from "react";
 
 const NavMenu = ({
-  filter,
-  make,
-  rentalPrice,
-  mileage,
-  onFilterChange,
-  onModelChange,
-  onPriceChange,
-  // setFilteredCars,
+  setFilteredCars,
 }) => {
+  const uniqueModels = Array.from(new Set(carsData.map(item => item.make)));
+  const uniqueRentalPrices = Array.from(new Set(carsData.map(item => item.rentalPrice)));
+  const uniqueMileage = Array.from(new Set(carsData.map(item => item.mileage)));
 
- const uniqueModels = Array.from(
-  new Set(carsData.map(item => item.make))
-);
+  const [make, setMake] = useState("Enter the text");
+  const [rentalPrice, setRentalPrice] = useState("To $");
+  const [mileageFrom, setMileageFrom] = useState(""); 
+  const [mileageTo, setMileageTo] = useState(""); 
 
- const uniqueRentalPrices = Array.from(
-  new Set(carsData.map(item => item.rentalPrice))
-);
-  const uniqueMileage = Array.from(
-  new Set(carsData.map(item => item.mileage))
-);
+  const handleSearchClick = () => {
+  // Перевірка, чи введені значення мінімального і максимального пробігу є числами
+  const startMilesInt = mileageFrom !== "" ? parseInt(mileageFrom) : null;
+  const endMilesInt = mileageTo !== "" ? parseInt(mileageTo) : null;
+
+  if (startMilesInt !== null && Number.isNaN(startMilesInt) ||
+      endMilesInt !== null && Number.isNaN(endMilesInt)) {
+    console.error('Please enter valid mileage values.');
+    return;
+  }
   
+  // Тут може бути фільтрація за моделлю і ціною
+  // Якщо mileageFrom і mileageTo порожні, то ви можете фільтрувати за моделлю і ціною
+  const filteredCars = carsData.filter((car) => {
+    const isMakeMatch = make === "Enter the text" || car.make === make;
+    const isPriceMatch = rentalPrice === "To $" || car.rentalPrice === rentalPrice;
+    const isMileageFromMatch = startMilesInt === null || car.mileage >= startMilesInt;
+    const isMileageToMatch = endMilesInt === null || car.mileage <= endMilesInt;
+
+    return isMakeMatch && isPriceMatch && isMileageFromMatch && isMileageToMatch;
+  });
+
+  // Встановлюємо відфільтровані результати в state (або викликаємо вашу функцію setFilteredCars)
+  setFilteredCars(filteredCars);
+}
+
+
   return (
     <FilterContainer>
-      
       <CustomSelectComponent
         options={["Enter the text", ...uniqueModels]}
         value={make} 
-        onChange={onModelChange}
+        onChange={(value) => setMake(value)}
         placeholder="Enter the text"
       />
       <CustomSelectComponent
         options={["To $", ...uniqueRentalPrices]} 
         value={rentalPrice} 
-        onChange={onPriceChange}
+        onChange={(value) => setRentalPrice(value)}
         placeholder="To $"
       />
       <div style={{ display: 'flex', alignItems: 'center', marginLeft: "18px" }}>
-        <InputFilter
-          options={[...uniqueMileage]}
-          value={mileage}
-          filter={filter}
-          inputStyle="active"
-          onFilterChange={onFilterChange}
-          inputPrefix="From"
-          name="fromFilter"
-        />
-        <InputFilter
-          value={mileage}
-          filter={filter}
-          inputStyle="secondary"
-          onFilterChange={onFilterChange}
-          inputPrefix="To"
-          name="toFilter"
-        />
-       
+       <InputFilter
+  options={uniqueMileage.map(String)} // Перетворення на рядки
+  value={mileageFrom}
+  onFilterChange={(value) => setMileageFrom(value)} // Змінено з onChange на onFilterChange
+  inputStyle="active"
+  inputPrefix="From"
+  name="fromFilter"
+/>
+<InputFilter
+  options={uniqueMileage.map(String)} // Перетворення на рядки
+  value={mileageTo}
+  onFilterChange={(value) => setMileageTo(value)} // Змінено з onChange на onFilterChange
+  inputStyle="secondary"
+  inputPrefix="To"
+  name="toFilter"
+/>
+
+
       </div>
-       <ButtonSee>Search</ButtonSee>
+      <ButtonSee onClick={handleSearchClick}>Search</ButtonSee>
     </FilterContainer>
   );
 };
 
-export default NavMenu;
-
 NavMenu.propTypes = {
-  make: PropTypes.string,
-  rentalPrice: PropTypes.string,
-  mileage: PropTypes.string,
-  onModelChange: PropTypes.func.isRequired,
-  onPriceChange: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
-  onFilterChange: PropTypes.func.isRequired,
   setFilteredCars: PropTypes.func.isRequired,
 };
+
+export default NavMenu;
+
 //   const token = useSelector(state => state.auth.token);
 //  useEffect(() => {
 //   setToken(token);
