@@ -22,7 +22,7 @@ const NavMenu = ({
   const [mileageTo, setMileageTo] = useState(""); 
 
   const handleSearchClick = () => {
-  // Перевірка, чи введені значення мінімального і максимального пробігу є числами
+  
   const startMilesInt = mileageFrom !== "" ? parseInt(mileageFrom) : null;
   const endMilesInt = mileageTo !== "" ? parseInt(mileageTo) : null;
 
@@ -32,8 +32,7 @@ const NavMenu = ({
     return;
   }
   
-  // Тут може бути фільтрація за моделлю і ціною
-  // Якщо mileageFrom і mileageTo порожні, то ви можете фільтрувати за моделлю і ціною
+
   const filteredCars = carsData.filter((car) => {
     const isMakeMatch = make === "Enter the text" || car.make === make;
     const isPriceMatch = rentalPrice === "To $" || car.rentalPrice === rentalPrice;
@@ -43,7 +42,6 @@ const NavMenu = ({
     return isMakeMatch && isPriceMatch && isMileageFromMatch && isMileageToMatch;
   });
 
-  // Встановлюємо відфільтровані результати в state (або викликаємо вашу функцію setFilteredCars)
   setFilteredCars(filteredCars);
 }
 
@@ -64,17 +62,17 @@ const NavMenu = ({
       />
       <div style={{ display: 'flex', alignItems: 'center', marginLeft: "18px" }}>
        <InputFilter
-  options={uniqueMileage.map(String)} // Перетворення на рядки
+  options={uniqueMileage.map(String)} 
   value={mileageFrom}
-  onFilterChange={(value) => setMileageFrom(value)} // Змінено з onChange на onFilterChange
+  onFilterChange={(value) => setMileageFrom(value)} 
   inputStyle="active"
   inputPrefix="From"
   name="fromFilter"
 />
 <InputFilter
-  options={uniqueMileage.map(String)} // Перетворення на рядки
+  options={uniqueMileage.map(String)} 
   value={mileageTo}
-  onFilterChange={(value) => setMileageTo(value)} // Змінено з onChange на onFilterChange
+  onFilterChange={(value) => setMileageTo(value)} 
   inputStyle="secondary"
   inputPrefix="To"
   name="toFilter"
@@ -92,61 +90,3 @@ NavMenu.propTypes = {
 };
 
 export default NavMenu;
-
-//   const token = useSelector(state => state.auth.token);
-//  useEffect(() => {
-//   setToken(token);
-//   const fetchData = async () => {
-//     try {
-//       const res = await instance.get('api/catalog/search?limit=40');
-//       const data = res.data;
-//       setMyCars(data.hits);
-
-//       const uniqueModels = Array.from(new Set(data.hits.map(item => item.make)));
-//       const uniquePrice = Array.from(new Set(data.hits.map(item => item.rentalPrice)));
-
-//       setModels([...uniqueModels]); 
-//       setPrices([...uniquePrice]); 
-//     } catch (error) {
-//       console.error('Error fetching cars', error);
-//     }
-//   };
-//   fetchData();
-// }, [token]);
-  //   useEffect(() => {
-  //   setMyCars(carsData);
-
-  //   const uniqueModels = Array.from(new Set(carsData.map(item => item.make)));
-  //   const uniquePrice = Array.from(new Set(carsData.map(item => item.rentalPrice)));
-
-  //   setModels([...uniqueModels]); 
-  //   setPrices([...uniquePrice]); 
-  // }, []);
-
-// const filterCars = (fromFilter, toFilter, selectedCar, selectedPrice) => {
-//   const newFilteredCars = myCars.filter((car) => {
-//     const isCarMatch = selectedCar === "Select model" || car.make === selectedCar;
-//     const isPriceMatch = selectedPrice === "To $" || car.rentalPrice === selectedPrice;
-//     const isFromFilterMatch = fromFilter === "" || car.someProperty >= fromFilter; // Замініть someProperty на властивість з вашого JSON
-//     const isToFilterMatch = toFilter === "" || car.someProperty <= toFilter; // Замініть someProperty на властивість з вашого JSON
-//     return isCarMatch && isPriceMatch && isFromFilterMatch && isToFilterMatch;
-//   });
-
-//   setFilteredCars(newFilteredCars);
-// };
-
-
-//  const handleMileageChange = (fromMileage, toMileage) => {
-//     // Фільтрація за пробігом (Mileage)
-//     const filteredCarsByMileage = carsData.filter(car => {
-//       if (fromMileage !== null && toMileage !== null) {
-//         return car.mileage >= fromMileage && car.mileage <= toMileage;
-//       } else if (fromMileage !== null) {
-//         return car.mileage >= fromMileage;
-//       } else if (toMileage !== null) {
-//         return car.mileage <= toMileage;
-//       }
-//       return true; 
-//     });
-//     setFilteredCars(filteredCarsByMileage);
-//   };
