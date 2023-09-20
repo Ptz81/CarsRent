@@ -1,4 +1,4 @@
-import{n as i,r,j as e}from"./index-e9e17586.js";import{T as c,C as l}from"./CardsFavorite-6f5e6d81.js";import{N as m}from"./notfoundpage-fcb94ca6.js";import"./CardsModal-9ac44c2f.js";const g=i.div`
+import{n as i,r,j as e}from"./index-23e45bc2.js";import{T as c,C as l}from"./CardsFavorite-7331b320.js";import{N as m}from"./notfoundpage-fcb94ca6.js";import"./CardsModal-ea7c2e84.js";const g=i.div`
   position: relative;
   margin: 0 auto;
 height: 100vh;
