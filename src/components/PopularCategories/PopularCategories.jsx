@@ -15,18 +15,19 @@ import CardsModal from '../Card/CardsModal';
 import { getAllCars } from '../../data/Api.jsx';
 
 const PopularCategories = ({ categoryCar }) => {
-   const [cardsPerRow, setCardsPerRow] = useState(4);
+  const [cardsPerRow, setCardsPerRow] = useState(4);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCar, setSelectedCar] = useState(null);
   const [carsData, setCarsData] = useState([]);
-
+  const [carsInCategory, setCarsInCategory] = useState([]);
 
   const handleClickOutside = (event) => {
     if (CardWrapper.current && !CardWrapper.current.contains(event.target)) {
       setIsOpen(false);
     }
   };
-useEffect(() => {
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getAllCars();
@@ -41,15 +42,15 @@ useEffect(() => {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === "Escape" && isOpen) {
+      if (event.key === 'Escape' && isOpen) {
         setIsOpen(false);
       }
     };
-    document.addEventListener("keydown", handleKeyDown);
-    document.addEventListener("click", handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('click', handleClickOutside);
     return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, [isOpen]);
 
@@ -75,6 +76,17 @@ useEffect(() => {
     };
   }, []);
 
+  useEffect(() => {
+    const updateCarsInCategory = () => {
+      const filteredCars = carsData.filter((car) =>
+        car.type.toLowerCase() === categoryCar.toLowerCase()
+      );
+      setCarsInCategory(filteredCars);
+    };
+
+    updateCarsInCategory();
+  }, [categoryCar, carsData]);
+
   const handleToggle = (carId) => {
     const car = findCarById(carId);
     if (car) {
@@ -84,14 +96,14 @@ useEffect(() => {
   };
 
   const findCarById = (carId) => {
-    return carsData.find((car) => car.id === carId);
+    return carsInCategory.find((car) => car.id === carId);
   };
 
   return (
     <div>
       <NameCategory>{categoryCar}</NameCategory>
       <CarList>
-        {carsData.slice(0, cardsPerRow).map((car) => (
+        {carsInCategory.slice(0, cardsPerRow).map((car) => (
           <li key={car.id}>
             <ImgContainer>
               <ImgCar src={car.img} alt={car.make} />
@@ -128,8 +140,8 @@ useEffect(() => {
   );
 };
 
-export default PopularCategories;
-
 PopularCategories.propTypes = {
   categoryCar: PropTypes.string.isRequired,
 };
+
+export default PopularCategories;
