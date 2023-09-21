@@ -36,7 +36,7 @@ const CardsModal = ({id, make, model, type, year, rentalConditions,img, address,
        {!propsImg || propsImg === '' ? (
         <Box/>
       ) : (
-        <Img src={img} alt="car photo"/>
+        <Img src={img} alt="car photo" width="100%" height="248px"/>
       )}
       </CardWrapper>
       <Info>

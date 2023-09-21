@@ -101,12 +101,12 @@ const CardsFavorite = ({ onRemove, id, make, year, address, rentalConditions, re
           {!propsImg || propsImg === '' ? (
         <Box/>
       ) : (
-        <Img src={img} alt="car photo"/>
+        <Img src={img} alt="car photo" width="274px" height= "268px"/>
       )}
         
       <HeartIcon
           size={32}
-           style={{ fill: isFavorite ? 'blue' : 'transparent' }}
+           style={{ fill: isFavorite ? 'blue' : 'transparent', stroke: isFavorite ? 'transparent' : 'white'}}
         />
 
       </CardWrapper>
@@ -124,9 +124,9 @@ const CardsFavorite = ({ onRemove, id, make, year, address, rentalConditions, re
       </Description>
               <Description>
         <Text>{ type}</Text>
-        <Text style={{whiteSpace: "nowrap", width:"100%", overflow:'hidden'}}>{ model }</Text>
+        <Text style={{whiteSpace: "nowrap", overflow:'hidden'}}>{ model }</Text>
         <Text>{ id }</Text>
-        <Text style={{whiteSpace: "nowrap", width:"100%", overflow:'hidden'}}>{ advantages }</Text>
+        <Text style={{whiteSpace: "nowrap",overflow:'hidden'}}>{ advantages }</Text>
         </Description>
       
       <ListBtn>

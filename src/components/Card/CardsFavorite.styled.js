@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { colors } from "../../styles/GlobalStyles";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.li`
 width: 274px;
   /* flex-basis: 274px;  */
   display: flex;
@@ -26,9 +26,10 @@ export const SubTitle = styled.span`
 color: ${colors.accentColor};
 margin-left: 5px;
 margin-right: 5px;
+
 `
 
-export const Text = styled.p`
+export const Text = styled.li`
   color: ${colors.subTitleColor};
   font-family: inherit;
   font-size: 10px;
@@ -73,15 +74,10 @@ export const Favorite = styled.img`
 `;
 
 
-export const Description = styled.div`
+export const Description = styled.ul`
   color: ${colors.textMainColor};
   display: flex;
   margin-bottom: 4px;
-  /* font-family: inherit;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; */
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -94,7 +90,9 @@ export const Title = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
-  /* margin-bottom: 8px; */
+white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
 `;
 export const Price = styled.div`
   color: ${colors.textMainColor};
@@ -103,14 +101,6 @@ export const Price = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
-  /* margin-left: 140px; */
-
-  /* @media screen and (min-width: 768px) {
-    font-size: 24px;
-    line-height: 32px;
-  } */
-
-  /* margin-bottom: 8px; */
 `;
 export const ListBtn = styled.div`
   width: auto;
