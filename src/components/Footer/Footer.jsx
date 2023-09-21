@@ -24,7 +24,7 @@ const Footer = () => {
         <Text>Contact phone: +380 2222222</Text>
       </TextWrapper>
       <TextWrapper>
-        <Text>©2023 Rent Car. All rights reserved.</Text>
+        <Text>©TP 2023 Rent Car. All rights reserved.</Text>
       </TextWrapper>
     </Section>
   );
