@@ -1,4 +1,4 @@
-import{n as i,c as o,P as e,j as t,r as h}from"./index-084a58f4.js";import{b as A,M as H,C as R}from"./CardsModal-707ff992.js";const W=i.h1`
+import{n as i,c as o,P as e,j as t,r as h}from"./index-6e226077.js";import{b as A,M as H,C as R}from"./CardsModal-8bcd6eb8.js";const W=i.h1`
 text-align: center;
   font-family: var(--main-font-family);
   font-size: 32px;

@@ -1,9 +1,9 @@
-import{n as t,c as m,P as a,j as e,B as z,a as S,u as w,T as E,L as B,r as l}from"./index-084a58f4.js";import{M as P,C as L}from"./CardsModal-707ff992.js";import{g as R}from"./Api-55848266.js";const g="/CarsRent/assets/MainPage-66e01da7.jpg",T=t.section`
+import{n,c as m,P as r,j as e,B,a as L,u as C,T as P,L as R,r as c}from"./index-6e226077.js";import{M as T,C as $}from"./CardsModal-8bcd6eb8.js";import{g as I}from"./Api-55848266.js";const g="/CarsRent/assets/MainPage-66e01da7.jpg",M=n.section`
 position: relative;
   background-color: ${m.mainBgColor};
   min-height: 100%;
   width: 100%;
-`,$=t.div`
+`,D=n.div`
   display: flex-inline;
   justify-content: st;
   flex-direction: column;
@@ -15,7 +15,7 @@ position: relative;
   @media (min-width: 1200px) {
     padding-top: 160px;
   }
-`,M=t.div`
+`,N=n.div`
 padding-left: 20px;
   height: 740px;
   background-size: cover;
@@ -71,7 +71,7 @@ padding-left: 20px;
       linear-gradient(86.16deg, #0a0a11 8.41%, rgba(10, 10, 17, 0) 46.6%),
       url("${g}");
   }
-`,D=t.h1`
+`,O=n.h1`
   max-width: 280px;
   color: ${m.mainBgColor};
   font-size: 32px;
@@ -91,7 +91,7 @@ padding-left: 20px;
     font-size: 64px;
     line-height: 68px;
   }
-`,N=t.p`
+`,W=n.p`
   max-width: 270px;
   color: ${m.mainBgColor};
   font-size: 14px;
@@ -108,7 +108,7 @@ padding-left: 20px;
   @media screen and (min-width: 1440px) {
     max-width: 500px;
   }
-`,h=({type:d,buttonName:c,onClick:p,buttonStyle:s})=>{let r;return s==="active"?r=z:s==="secondary"&&(r=S),e.jsx(r,{type:d,onClick:p,children:c})};h.propTypes={onClick:a.func,type:a.string.isRequired,buttonName:a.string.isRequired,buttonStyle:a.string};const y=({title:d,description:c,children:p})=>{const s=w(),r=()=>{s("/catalog/1")};return e.jsx(T,{children:e.jsx(M,{children:e.jsxs($,{children:[d&&e.jsx(D,{children:d}),c&&e.jsx(N,{children:c}),e.jsx(h,{type:"button",buttonStyle:"active",buttonName:"Select a car",onClick:r}),p]})})})};y.propTypes={title:a.string,description:a.string,children:a.oneOfType([a.arrayOf(a.element),a.element])};const O=t.h2`
+`,h=({type:o,buttonName:p,onClick:l,buttonStyle:d})=>{let s;return d==="active"?s=B:d==="secondary"&&(s=L),e.jsx(s,{type:o,onClick:l,children:p})};h.propTypes={onClick:r.func,type:r.string.isRequired,buttonName:r.string.isRequired,buttonStyle:r.string};const y=({title:o,description:p,children:l})=>{const d=C(),s=()=>{d("/catalog/1")};return e.jsx(M,{children:e.jsx(N,{children:e.jsxs(D,{children:[o&&e.jsx(O,{children:o}),p&&e.jsx(W,{children:p}),e.jsx(h,{type:"button",buttonStyle:"active",buttonName:"Select a car",onClick:s}),l]})})})};y.propTypes={title:r.string,description:r.string,children:r.oneOfType([r.arrayOf(r.element),r.element])};const q=n.h2`
   color: #f3f3f3;
   font-size: 28px;
   font-weight: 600;
@@ -120,28 +120,28 @@ padding-left: 20px;
     margin-bottom: 40px;
     text-align:start;
   }
-`,W=t.ul`
+`,A=n.ul`
   display: flex;
   gap: 20px;
   justify-content: space-around;
   margin-bottom: 50px;
-`,I=t.div`
+`,H=n.div`
   max-width: 335px;
   max-height: 360px;
-  transition: ${E("box-shadow")};
+  transition: ${P("box-shadow")};
   &:hover{
     box-shadow: 0px 0px 31px -10px rgba(255,255,255,1);
   }
-`,q=t.img`
+`,U=n.img`
   width: 335px;
   height: 260px;
   object-fit: cover;
   border-radius: 6px;
-`,A=t.div`
+`,F=n.div`
   display: flex;
   justify-content: space-between;
   margin-top: 14px;
-`,H=t.p`
+`,K=n.p`
   color: #f3f3f3;
   font-size: 16px;
   font-weight: 500;
@@ -151,7 +151,7 @@ padding-left: 20px;
     font-size: 18px;
     line-height: 1.33;
   }
-`,U=t(B)`
+`,V=n(R)`
   color: rgba(243, 243, 243, 0.5);
   font-size: 14px;
   font-weight: 600;
@@ -161,20 +161,20 @@ padding-left: 20px;
     font-size: 16px;
     line-height: 1.13;
   }
-`,b=t.div`
+`,w=n.div`
 position: relative;
 width: 274px;
-`,x=({categoryCar:d})=>{const[c,p]=l.useState(4),[s,r]=l.useState(!1),[i,C]=l.useState(null),[u,k]=l.useState([]),f=n=>{b.current&&!b.current.contains(n.target)&&r(!1)};l.useEffect(()=>{(async()=>{try{const o=await R();k(o)}catch(o){console.error("Error fetching cars",o)}})()},[]),l.useEffect(()=>{const n=o=>{o.key==="Escape"&&s&&r(!1)};return document.addEventListener("keydown",n),document.addEventListener("click",f),()=>{document.removeEventListener("keydown",n),document.removeEventListener("click",f)}},[s]),l.useEffect(()=>{const n=()=>{window.innerWidth>1200?p(4):window.innerWidth>1e3?p(3):window.innerWidth>768?p(2):p(1)};return n(),window.addEventListener("resize",n),()=>{window.removeEventListener("resize",n)}},[]);const v=n=>{const o=j(n);o&&(C(o),r(!0))},j=n=>u.find(o=>o.id===n);return e.jsxs("div",{children:[e.jsx(O,{children:d}),e.jsx(W,{children:u.slice(0,c).map(n=>e.jsxs("li",{children:[e.jsx(I,{children:e.jsx(q,{src:n.img,alt:n.make})}),e.jsxs(A,{children:[e.jsx(H,{children:n.make}),e.jsx(U,{onClick:()=>v(n.id),children:"See more"})]})]},n.id))}),s&&i&&e.jsx(P,{isOpen:s,closeModal:()=>r(!1),children:e.jsx(L,{id:i.id,make:i.make,model:i.model,year:i.year,type:i.type,rentalPrice:i.rentalPrice,mileage:i.mileage,fuelConsumption:i.fuelConsumption,description:i.description,engineSize:i.engineSize,functionalities:i.functionalities,img:i.img,address:i.address,rentalConditions:i.rentalConditions})})]})};x.propTypes={categoryCar:a.string.isRequired};const F=t.div`
+`,x=({categoryCar:o})=>{const[p,l]=c.useState(4),[d,s]=c.useState(!1),[i,k]=c.useState(null),[u,v]=c.useState([]),[f,j]=c.useState([]),b=t=>{w.current&&!w.current.contains(t.target)&&s(!1)};c.useEffect(()=>{(async()=>{try{const a=await I();v(a)}catch(a){console.error("Error fetching cars",a)}})()},[]),c.useEffect(()=>{const t=a=>{a.key==="Escape"&&d&&s(!1)};return document.addEventListener("keydown",t),document.addEventListener("click",b),()=>{document.removeEventListener("keydown",t),document.removeEventListener("click",b)}},[d]),c.useEffect(()=>{const t=()=>{window.innerWidth>1200?l(4):window.innerWidth>1e3?l(3):window.innerWidth>768?l(2):l(1)};return t(),window.addEventListener("resize",t),()=>{window.removeEventListener("resize",t)}},[]),c.useEffect(()=>{(()=>{const a=u.filter(E=>E.type.toLowerCase()===o.toLowerCase());j(a)})()},[o,u]);const z=t=>{const a=S(t);a&&(k(a),s(!0))},S=t=>f.find(a=>a.id===t);return e.jsxs("div",{children:[e.jsx(q,{children:o}),e.jsx(A,{children:f.slice(0,p).map(t=>e.jsxs("li",{children:[e.jsx(H,{children:e.jsx(U,{src:t.img,alt:t.make})}),e.jsxs(F,{children:[e.jsx(K,{children:t.make}),e.jsx(V,{onClick:()=>z(t.id),children:"See more"})]})]},t.id))}),d&&i&&e.jsx(T,{isOpen:d,closeModal:()=>s(!1),children:e.jsx($,{id:i.id,make:i.make,model:i.model,year:i.year,type:i.type,rentalPrice:i.rentalPrice,mileage:i.mileage,fuelConsumption:i.fuelConsumption,description:i.description,engineSize:i.engineSize,functionalities:i.functionalities,img:i.img,address:i.address,rentalConditions:i.rentalConditions})})]})};x.propTypes={categoryCar:r.string.isRequired};const Y=n.div`
   position: relative;
   background: #0a0a11;
   margin: 0 auto;
-`,K=t.div`
+`,G=n.div`
 display: flex;
 justify-content: center;
   margin-top: 80px;
-`,V=t.div`
+`,J=n.div`
   padding: 40px 20px 40px 20px;
   @media screen and (min-width: 768px) {
     padding: 80px 50px 40px 50px;
   }
-`,Q=()=>{const d=w(),c=()=>{d("/catalog/1")};return e.jsxs(e.Fragment,{children:[e.jsx(y,{title:"Unlock the Road to Adventure with Our Rental Cars",description:"Embark on a journey of exploration and convenience with our unbeatable car rental services. Your next adventure begins here. "}),e.jsx(F,{children:e.jsxs(V,{children:[" ",e.jsx(x,{categoryCar:"Convertible"}),e.jsx(x,{categoryCar:"SUV"}),e.jsx(K,{children:e.jsx(h,{type:"button",buttonStyle:"secondary",buttonName:"Load more",onClick:c})})]})})]})};export{V as Container,Q as default};
+`,_=()=>{const o=C(),p=()=>{o("/catalog/1")};return e.jsxs(e.Fragment,{children:[e.jsx(y,{title:"Unlock the Road to Adventure with Our Rental Cars",description:"Embark on a journey of exploration and convenience with our unbeatable car rental services. Your next adventure begins here. "}),e.jsx(Y,{children:e.jsxs(J,{children:[" ",e.jsx(x,{categoryCar:"Convertible"}),e.jsx(x,{categoryCar:"SUV"}),e.jsx(G,{children:e.jsx(h,{type:"button",buttonStyle:"secondary",buttonName:"Load more",onClick:p})})]})})]})};export{J as Container,_ as default};

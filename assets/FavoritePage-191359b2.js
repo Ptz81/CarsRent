@@ -1,4 +1,4 @@
-import{n as i,r,j as e}from"./index-084a58f4.js";import{T as c,C as m}from"./CardsFavorite-65924ce6.js";import{N as l}from"./notfoundpage-fcb94ca6.js";import"./CardsModal-707ff992.js";const g=i.div`
+import{n as i,r,j as e}from"./index-6e226077.js";import{T as c,C as m}from"./CardsFavorite-06e8d7e9.js";import{N as l}from"./notfoundpage-fcb94ca6.js";import"./CardsModal-8bcd6eb8.js";const g=i.div`
   position: relative;
   margin: 0 auto;
 min-height: 85vh;
