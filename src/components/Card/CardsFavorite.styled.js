@@ -32,11 +32,18 @@ margin-right: 5px;
 export const Text = styled.li`
   color: ${colors.subTitleColor};
   font-family: inherit;
-  font-size: 10px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
   margin-right: 12px;
+max-width: 80px;
+  
+  :not(:last-child){
+  border-right: 1px solid ${colors.subTitleColor};
+  padding-right: 10px;
+  }
+ 
   @media screen and (min-width: 768px) {
     font-size: 12px;
     line-height: 18px;
@@ -92,7 +99,7 @@ export const Title = styled.div`
   line-height: 24px;
 white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; 
+  
 `;
 export const Price = styled.div`
   color: ${colors.textMainColor};

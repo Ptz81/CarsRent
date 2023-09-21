@@ -2,15 +2,16 @@ import styled from '@emotion/styled';
 import { colors } from '../../styles/GlobalStyles';
 
 export const Section = styled.section`
-  padding: 20px;
+  padding: 20px 32px;
   background-color: ${colors.disabled};
   border-top: 1px solid rgba(243, 243, 243, 0.2);
   display: flex;
-  justify-content: space-between;
+  /* justify-content: center;
+  align-items: center; */
   flex-direction: column;
 
   @media (min-width: 768px) {
-    padding: 20px 32px;
+    justify-content: space-between;
     flex-direction: row;
   }
   /* @media (min-width: 1200px) {
@@ -19,9 +20,10 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-
+display: flex;
+align-items: center;
+justify-content: center;
   @media (min-width: 768px) {
-    display: flex;
     justify-content: space-between;
   }
 
@@ -34,7 +36,8 @@ export const LogoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  margin-bottom: 50px;
+
+ 
 
   @media (min-width: 768px) {
     row-gap: 28px;
@@ -58,10 +61,14 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
 
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom:0px;
   }
 `;
 export const Text = styled.p`

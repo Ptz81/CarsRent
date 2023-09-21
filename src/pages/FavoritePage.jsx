@@ -10,7 +10,7 @@ import NotFoundMobile from '../assets/notfoundpage.png'
 export const Page = styled.div`
   position: relative;
   margin: 0 auto;
-height: 100vh;
+min-height: 85vh;
 `;
 
 export const Container404 = styled.div`
@@ -27,19 +27,19 @@ export const Container404 = styled.div`
 
 export const List = styled.ul`
   z-index: 2;
-  padding: 0 20px 80px 20px;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
+  display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 28px;
+     margin-top: 20px;
+
+  @media screen and (min-width: 768px) {
     margin-top: 40px;
   }
 `;
 
 export const Container = styled.div`
-  padding: 40px 20px 40px 20px;
+  padding: 60px 30px 30px 30px;
   @media screen and (min-width: 768px) {
     padding: 80px 50px 40px 50px;
   }
