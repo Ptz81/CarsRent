@@ -38,6 +38,8 @@ export const Text = styled.li`
   line-height: 16px;
   margin-right: 12px;
 max-width: 80px;
+white-space: nowrap; 
+overflow:hidden;
   
   :not(:last-child){
   border-right: 1px solid ${colors.subTitleColor};

@@ -123,10 +123,10 @@ const CardsFavorite = ({ onRemove, id, make, year, address, rentalConditions, re
         <Text>{ rentalCompany }</Text>
       </Description>
               <Description>
-        <Text style={{whiteSpace: "nowrap", overflow:'hidden'}}>{ type}</Text>
-        <Text style={{whiteSpace: "nowrap", overflow:'hidden'}}>{ model }</Text>
+        <Text>{ type}</Text>
+        <Text>{ model }</Text>
         <Text>{ id }</Text>
-        <Text style={{whiteSpace: "nowrap",overflow:'hidden'}}>{ advantages }</Text>
+        <Text>{ advantages }</Text>
         </Description>
       
       <ListBtn>
